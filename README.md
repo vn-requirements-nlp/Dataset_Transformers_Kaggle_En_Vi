@@ -1,4 +1,4 @@
-# Phân loại yêu cầu đa nhãn (EN/VI)
+# Software Requirements Classification (EN/VI) - Transformers
 
 Fine-tuning Transformer cho bài toán phân loại đa nhãn các yêu cầu phần mềm (nhóm NFR) trên dữ liệu tiếng Anh và tiếng Việt.
 
