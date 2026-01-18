@@ -1,0 +1,12 @@
+torch
+transformers
+datasets
+seqeval
+accelerate
+scikit-learn
+iterative-stratification
+sacremoses
+sentencepiece
+pyvi
+numpy
+protobuf

@@ -1,0 +1,622 @@
+{"text": "Hệ thống phải làm mới màn hình hiển thị mỗi 60 giây.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Ứng dụng phải khớp màu với sơ đồ màu (color scheme) do Bộ An ninh Nội địa quy định.", "labels": ["Legal (L)", "Look & Feel (LF)"], "label_ids": [3, 4]}
+{"text": "Nếu được chiếu, dữ liệu phải có thể đọc được. Trên màn chiếu kích thước 10x10, 90% người xem phải có thể đọc dữ liệu Sự kiện/Hoạt động từ khoảng cách quan sát 30 feet.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Sản phẩm phải sẵn sàng trong giờ hành chính. Miễn là người dùng có quyền truy cập vào máy khách PC, hệ thống sẽ khả dụng 99% thời gian trong sáu tháng đầu vận hành.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Nếu được chiếu, dữ liệu phải có thể hiểu được. Trên màn chiếu kích thước 10x10, 90% người xem phải có thể xác định được rằng Sự kiện hoặc Hoạt động đang xảy ra trong thời gian thực từ khoảng cách quan sát 100 feet.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Sản phẩm phải đảm bảo chỉ được truy cập bởi người dùng được ủy quyền. Sản phẩm sẽ phân biệt được giữa người dùng được ủy quyền và không được ủy quyền trong mọi lần truy cập.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Sản phẩm phải trực quan và dễ hiểu; 90% người dùng mới phải có thể bắt đầu hiển thị Sự kiện hoặc Hoạt động trong vòng 90 phút kể từ khi bắt đầu sử dụng sản phẩm.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải phản hồi nhanh để giữ cho dữ liệu hiển thị luôn cập nhật.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Hệ thống phải có một biểu mẫu MDI cho phép xem đồ thị và bảng dữ liệu.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải hiển thị Sự kiện dưới dạng bảng dọc theo thời gian.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải hiển thị các Sự kiện bằng đồ thị theo thời gian.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải hiển thị Sự kiện hoặc Hoạt động.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Màn hình hiển thị phải có hai vùng: bên trái 2/3 là đồ họa, bên phải 1/3 là bảng dữ liệu.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Dữ liệu hiển thị cả trên các nút trong đồ thị và trên các hàng trong bảng là dữ liệu Tóm tắt MSEL.", "labels": [], "label_ids": []}
+{"text": "Bên bảng của màn hình phải được chia thành 2 vùng: tuần tự và theo thời gian.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Phần trên 1/4 của bảng sẽ chứa các sự kiện được sắp xếp tuần tự.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Phần dưới 3/4 của bảng sẽ chứa các sự kiện xảy ra theo mức độ liên quan của chúng với thời gian hiện tại.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Hệ thống phải mã màu các sự kiện theo độ lệch so với thời gian hiện tại.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Hệ thống phải hiển thị dữ liệu từ các ứng dụng Sync Matrix 1.0 và Exercise Management Tool 1.0.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Hệ thống phải liên kết các Sự kiện trở lại ứng dụng Sync Matrix 1.0 hoặc Exercise Management Tool 1.0 để chỉnh sửa.", "labels": ["Functional (F)", "Maintainability (MN)", "Portability (PO)"], "label_ids": [0, 5, 8]}
+{"text": "Hệ thống phải cho phép chỉnh sửa màn hình hiển thị.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cung cấp chế độ hiển thị tất cả các Sự kiện trong cuộc diễn tập.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải lọc dữ liệu theo: Địa điểm (Venues) và Sự kiện chính (Key Events).", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cho phép người dùng định nghĩa các đoạn thời gian.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải hiển thị giờ địa phương và giờ cuộc diễn tập trên hai đồng hồ riêng biệt.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cho phép tạm dừng và tiếp tục làm mới dữ liệu.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cung cấp biểu đồ so sánh thời gian thực tế và thời gian giả định của Hoạt động hoặc Sự kiện.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cung cấp báo cáo lịch sử các thay đổi đã thực hiện đối với dữ liệu Hoạt động hoặc Sự kiện.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Giao diện và cảm nhận của hệ thống phải tuân theo tiêu chuẩn giao diện người dùng của thiết bị thông minh.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Giao diện người dùng phải có các menu và nút tiêu chuẩn để điều hướng.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Hệ thống phải có ngoại quan chuyên nghiệp.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Sản phẩm phải có bảng màu và phông chữ nhất quán.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Hệ thống phải được các đại lý bất động sản (realtors) sử dụng mà không cần đào tạo.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Hệ thống phải trực quan và tự giải thích.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải dễ học đối với một đại lý bất động sản.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải sử dụng các ký hiệu và từ ngữ mà cộng đồng đại lý bất động sản hiểu một cách tự nhiên.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Sản phẩm phải đưa ra kết quả tìm kiếm trong thời gian chấp nhận được.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Kết quả tìm kiếm phải được trả về không muộn hơn 30 giây sau khi người dùng nhập tiêu chí tìm kiếm.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Sản phẩm phải tạo báo cáo CMA trong thời gian chấp nhận được.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Báo cáo CMA phải được trả về không muộn hơn 60 giây sau khi người dùng nhập tiêu chí báo cáo CMA.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Sản phẩm phải đồng bộ danh bạ và cuộc hẹn trong thời gian chấp nhận được.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Sản phẩm phải đồng bộ với hệ thống văn phòng mỗi giờ.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Sản phẩm phải sẵn sàng sử dụng 24 giờ mỗi ngày, 365 ngày mỗi năm.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Trong 1000 lần truy cập hệ thống, hệ thống phải khả dụng 999 lần.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Sản phẩm phải hoạt động ở chế độ ngoại tuyến khi không có kết nối Internet.", "labels": ["Fault Tolerance (FT)"], "label_ids": [2]}
+{"text": "Sản phẩm phải cho phép người dùng xem các kết quả tìm kiếm, báo cáo CMA và cuộc hẹn đã tải xuống trước đó.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải giữ lại tùy chọn người dùng trong trường hợp xảy ra sự cố.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "100% các tùy chọn người dùng đã lưu phải được khôi phục khi hệ thống trực tuyến trở lại.", "labels": ["Functional (F)", "Fault Tolerance (FT)"], "label_ids": [0, 2]}
+{"text": "Sản phẩm phải hỗ trợ nhiều người dùng từ xa.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải hỗ trợ 1000 người dùng đồng thời.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Sản phẩm phải có khả năng xử lý 1000 người dùng hiện có; con số này dự kiến sẽ tăng gấp 5 lần trong năm tới.", "labels": ["Performance (PE)", "Scalability (SC)"], "label_ids": [7, 9]}
+{"text": "Sản phẩm phải được cài đặt bởi một đại lý bất động sản không được đào tạo mà không cần đến hướng dẫn in riêng.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "90% đại lý không được đào tạo phải có thể cài đặt sản phẩm trên thiết bị của họ mà không cần hướng dẫn in.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm dự kiến sẽ chạy trên hệ điều hành Windows CE và Palm.", "labels": ["Portability (PO)"], "label_ids": [8]}
+{"text": "Chỉ các đại lý đã đăng ký mới được phép truy cập hệ thống.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Mỗi người dùng của hệ thống phải được xác thực và ủy quyền.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Sản phẩm phải ngăn việc nhập dữ liệu không chính xác vào hệ thống.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống phải cho phép một đại lý bất động sản truy vấn thông tin MLS.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Người dùng phải có thể nhận hướng dẫn lái xe đến một bất động sản được chọn.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Người dùng phải có thể tải xuống cuộc hẹn và thông tin liên hệ của khách hàng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải hiển thị hình ảnh bất động sản rõ ràng trong kết quả tìm kiếm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cập nhật hoặc tạo mới danh sách bất động sản trong MLS.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đại lý phải có thể tạo báo cáo CMA dựa trên tiêu chí bất động sản.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải có khả năng gọi cho người bán hoặc người mua để lên lịch cuộc hẹn.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đại lý phải được thông báo về các cuộc hẹn khách hàng mới sau khi đồng bộ tự động với hệ thống văn phòng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đại lý phải có thể truy xuất bản đồ hiển thị vị trí các bất động sản trong khu vực được chỉ định.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải thông báo cho đại lý khi người bán hoặc người mua phản hồi yêu cầu đặt cuộc hẹn.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải cho phép người dùng lưu kết quả tìm kiếm bất động sản.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải dễ sử dụng cho Quản trị Chương trình/Thành viên Nhân viên Y tá.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Tất cả người dùng phải có thể sử dụng hệ thống sau một ngày đào tạo.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Hệ thống phải giúp người dùng tránh lỗi khi lập lịch lớp học và thực hành lâm sàng cho sinh viên điều dưỡng.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Số lỗi do sinh viên ghi nhận phải giảm 50% trong năm đầu.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Hệ thống phải trực quan đối với Quản trị Chương trình/Thành viên Nhân viên Y tá.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "2 trong 3 Quản trị Chương trình/Thành viên Nhân viên Y tá phải có thể sử dụng hệ thống thành công để quản lý lập lịch lớp học và thực hành lâm sàng.", "labels": ["Functional (F)", "Usability (US)"], "label_ids": [0, 11]}
+{"text": "Hệ thống phải sử dụng các ký hiệu và từ ngữ mà cộng đồng người dùng hiểu một cách tự nhiên.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Ngôn ngữ sử dụng trong hệ thống phải nhất quán với Tiếng Anh Chuẩn và thuật ngữ của cộng đồng Điều dưỡng quốc gia.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Nhân viên phải có thể hoàn thành một bộ tác vụ trong thời gian phù hợp.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Thời gian phản hồi của các tác vụ quản lý sinh viên chung không được vượt quá 5 giây và thời gian phản hồi của việc tạo lịch không được vượt quá 30 giây.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Hệ thống phải sẵn sàng sử dụng trong khoảng thời gian từ 8 giờ sáng đến 6 giờ chiều.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Hệ thống phải đạt 95% thời gian hoạt động.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Hệ thống phải có khả năng xử lý tất cả các yêu cầu/sử dụng của người dùng trong giờ làm việc.", "labels": ["Availability (A)", "Scalability (SC)"], "label_ids": [1, 9]}
+{"text": "Hệ thống phải phục vụ được 10 người dùng đồng thời từ 9 giờ sáng đến 5 giờ chiều.", "labels": ["Availability (A)", "Scalability (SC)"], "label_ids": [1, 9]}
+{"text": "Hệ thống phải có khả năng xử lý 100% sinh viên điều dưỡng và các lớp học của họ trong 10 năm tới.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Hệ thống được kỳ vọng quản lý chương trình giảng dạy điều dưỡng và lịch lớp/lâm sàng ít nhất trong 5 năm.", "labels": ["Functional (F)", "Scalability (SC)"], "label_ids": [0, 9]}
+{"text": "Hệ thống phải có khả năng vận hành trong môi trường văn phòng điển hình của Khoa Điều dưỡng tại Đại học DePaul.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Hệ thống phải được sử dụng trong các thông số kỹ thuật được định nghĩa bởi các máy tính của Quản trị Chương trình/Thành viên Nhân viên Y tá.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Hệ thống phải hoạt động trên hệ điều hành Windows XP Professional.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Hệ thống phải giao tiếp với máy chủ trung tâm của CampusConnect.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Hệ thống phải giao tiếp với máy chủ trung tâm của giảng viên (faculty central server).", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Hệ thống phải giao tiếp với máy chủ chính của sinh viên (student master server).", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Chúng ta phải có khả năng tương tác với bất kỳ trình duyệt HTML nào.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Chỉ người dùng được ủy quyền mới được truy cập thông tin địa điểm lâm sàng.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Quản trị Chương trình/Thành viên Nhân viên Y tá là những người duy nhất được truy cập thông tin chi tiết về địa điểm lâm sàng.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Chỉ người dùng được ủy quyền mới có quyền truy cập thông tin cá nhân của sinh viên.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Tiến sĩ Susan Poslusny và Tiến sĩ Julie Donalek là những người duy nhất được quyền truy cập thông tin cá nhân của sinh viên.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Chỉ người dùng được ủy quyền mới được truy cập phần của hệ thống giao tiếp với CampusConnect.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Tiêu chí phù hợp: Tiến sĩ Susan Poslusny và Karen Sysol là những người duy nhất được quyền truy cập lịch phân lớp cuối cùng cho hệ thống giao tiếp với CampusConnect.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống phải có kiểm tra tính toàn vẹn dữ liệu cơ bản để giảm khả năng nhập dữ liệu sai hoặc không hợp lệ.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Hệ thống phải bảo vệ thông tin riêng tư theo chính sách thông tin của tổ chức.", "labels": ["Functional (F)", "Legal (L)", "Security (SE)"], "label_ids": [0, 3, 10]}
+{"text": "Hệ thống phải được xây dựng để bảo mật tối đa chống lại sự can thiệp ác ý.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống phải sử dụng phần mềm bảo vệ chống virus tiêu chuẩn của tổ chức để giúp giám sát các mối đe dọa đối với chính nó.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Một lớp học (cohort) phải được liên kết với một Chương trình Học tập do khoa cung cấp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể thêm danh sách sinh viên vào một lớp học (cohort).", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể thêm một sinh viên đơn lẻ vào một lớp học (cohort).", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sinh viên được thêm vào một lớp học (cohort) phải đủ điều kiện cho Chương trình Học tập của lớp học đó.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể chỉ định thứ tự ưu tiên các lớp cho một lớp học (cohort) nhất định.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đối với mỗi lớp trong một chuỗi cho một lớp học (cohort), Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể chỉ định quý học mà lớp đó sẽ được cung cấp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể thêm các lớp mới vào một chuỗi lớp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể thêm các lớp lâm sàng hoặc các phân đoạn lâm sàng vào một chuỗi lớp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể thêm một lớp học (cohort) mới vào hệ thống, xác định bằng tháng và năm bắt đầu.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể thêm các lớp mới cho khoa điều dưỡng vào hệ thống.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Một lớp học có thể là lớp không lâm sàng hoặc lớp lâm sàng.", "labels": [], "label_ids": []}
+{"text": "Lớp không lâm sàng phải chỉ định tên khoá học, yêu cầu phòng giảng, và nhu cầu giảng viên.", "labels": [], "label_ids": []}
+{"text": "Lớp lâm sàng phải chỉ định tên khoá học, yêu cầu phòng giảng, nhu cầu địa điểm lâm sàng, nhu cầu giảng viên giảng lý thuyết, và nhu cầu giảng viên phòng thí nghiệm lâm sàng.", "labels": [], "label_ids": []}
+{"text": "Quản trị Chương trình/Thành viên Nhân viên Y tá phải có thể tạo một Chương trình Học tập mới.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Một Chương trình Học tập phải bao gồm tên chương trình và danh sách các lớp bắt buộc (cả lâm sàng và không lâm sàng) phải hoàn thành.", "labels": [], "label_ids": []}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có khả năng chỉ định lớp nào là bắt buộc cho một Chương trình Học tập.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải có khả năng hiển thị báo cáo các lớp cần thiết cho một quý nhất định cho tất cả các lớp học (cohorts) của tất cả các chương trình nhằm mục đích lập kế hoạch cho Quản trị Chương trình/Thành viên Nhân viên Y tá.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Báo cáo các lớp cần thiết phải bao gồm (nhưng không giới hạn) các lớp sẽ được cung cấp, số phân đoạn/tiết cần thiết, số phòng thí nghiệm cần thiết và loại phòng cần thiết.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Các lớp cho một lớp học (cohort) nhất định không được xung đột về thời gian và ngày được cung cấp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể thêm một địa điểm lâm sàng mới vào hệ thống.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Thông tin địa điểm lâm sàng phải bao gồm (nhưng không giới hạn) tên địa điểm, người liên hệ và thông tin liên hệ.", "labels": [], "label_ids": []}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể thêm một phân đoạn phòng thí nghiệm lâm sàng mới cho một lớp lâm sàng hiện có vào hệ thống.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Một phân đoạn phòng thí nghiệm lâm sàng phải bao gồm tên địa điểm lâm sàng, giảng viên của lớp, ngày và giờ của phòng thí nghiệm.", "labels": [], "label_ids": []}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá phải có thể thêm một sinh viên đã đăng ký một lớp lâm sàng vào một phân đoạn phòng thí nghiệm lâm sàng tương ứng cho lớp đó.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cho phép một Quản trị Chương trình hoặc nhân viên điều dưỡng loại bỏ một sinh viên khỏi một phân đoạn phòng thí nghiệm lâm sàng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cho phép một Quản trị Chương trình/Thành viên Nhân viên Y tá chuyển một sinh viên từ một phân đoạn phòng thí nghiệm lâm sàng sang phân đoạn khác tương ứng với cùng một lớp lâm sàng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình và Thành viên Nhân viên Y tá chỉ được phép hủy một phân đoạn phòng thí nghiệm lâm sàng nếu không có sinh viên nào đăng ký cho phân đoạn đó.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Một Quản trị Chương trình/Thành viên Nhân viên Y tá phải có thể thêm một sinh viên điều dưỡng mới vào hệ thống.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên phải có khả năng quản lý tiến trình của một sinh viên bán thời gian, bao gồm sửa đổi thứ tự lớp và thời gian học của họ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải có khả năng hiển thị bản tóm tắt có thể in cho từng lớp học (cohort), bao gồm sinh viên đã đăng ký, Chương trình học, chuỗi lớp, tiến trình của cohort trong chương trình và thời gian hoàn thành dự kiến.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải có khả năng hiển thị bản tóm tắt có thể in cho từng địa điểm lâm sàng, bao gồm thông tin về các phòng thí nghiệm được tổ chức tại địa điểm đó cho quý nhất định (thông tin chung về địa điểm lâm sàng, các phòng thí nghiệm được tổ chức tại địa điểm đó, ngày và giờ của tất cả các phòng thí nghiệm).", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải có khả năng hiển thị bản tóm tắt có thể in cho từng phân đoạn phòng thí nghiệm lâm sàng, bao gồm (nhưng không giới hạn) tên lớp, mã lớp, phân đoạn phòng thí nghiệm, danh sách sinh viên đăng ký, giảng viên, ngày(s), giờ và địa điểm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải có khả năng hiển thị bản tóm tắt có thể in cho từng sinh viên điều dưỡng, bao gồm (nhưng không giới hạn) tên sinh viên, mã số sinh viên, ngày nhập học, các lớp, tín chỉ, GPA và cohort mà sinh viên đó đang theo học.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải có khả năng hiển thị bản tóm tắt có thể in của nhật ký hệ thống.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải chứa thông tin liên hệ (e-mail và số điện thoại) cho tất cả những người liên quan đến hệ thống, bao gồm (nhưng không giới hạn) nhân viên, sinh viên, giảng viên lý thuyết, giảng viên phòng thí nghiệm lâm sàng và quản trị viên địa điểm lâm sàng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống sẽ sử dụng địa chỉ e-mail đã lưu làm phương tiện chính để truyền thông tin tới các bên liên quan.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống sẽ thông báo cho các bên liên quan cho các mục đích truyền thông thường, bao gồm nhưng không giới hạn việc thông báo cho sinh viên về các lớp sắp tới (lộ trình thời gian) và lịch trình của họ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống sẽ thông báo cho các bên liên quan khi có thay đổi ảnh hưởng tới các kỳ lâm sàng, bao gồm nhưng không giới hạn thay đổi sức chứa phân đoạn lâm sàng và hủy phân đoạn lâm sàng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống sẽ thông báo cho các bên liên quan khi có thay đổi ảnh hưởng tới các lớp học, bao gồm nhưng không giới hạn hủy lớp, thay đổi chi tiết phân đoạn lớp và thay đổi đề xuất lớp cho một quý nhất định.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống sẽ thông báo cho các bên liên quan khi có thay đổi ảnh hưởng tới các lớp học (cohorts), bao gồm nhưng không giới hạn thay đổi thứ tự cho chương trình học của một cohort và thay đổi lịch trong một tuần cụ thể (ví dụ phòng thí nghiệm bị hủy tuần này do giảng viên ốm).", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống sẽ thông báo cho các bên liên quan khi có thay đổi ảnh hưởng tới sinh viên cụ thể, bao gồm nhưng không giới hạn thay đổi trạng thái sinh viên từ toàn thời gian sang bán thời gian và chuyển sinh viên sang phân đoạn lâm sàng khác.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình/Thành viên Nhân viên Y tá phải có khả năng sửa đổi thông tin liên quan tới các cohort, bao gồm mã định danh cohort, chương trình học, thứ tự ưu tiên các lớp và các quý mà cohort sẽ học các lớp cụ thể.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình/Thành viên Nhân viên Y tá phải có khả năng sửa đổi thông tin liên quan tới một Chương trình Học tập trong Khoa Điều dưỡng, bao gồm tên chương trình và các lớp bắt buộc cho Chương trình đó.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình/Thành viên Nhân viên Y tá phải có khả năng sửa đổi thông tin liên quan tới một Địa điểm Lâm sàng, bao gồm tên địa điểm, người liên hệ, thông tin liên hệ và địa chỉ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình/Thành viên Nhân viên Y tá phải có khả năng sửa đổi thông tin liên quan tới một Phân đoạn Phòng thí nghiệm Lâm sàng, bao gồm tên địa điểm lâm sàng, bộ phận/phân đoạn cho phòng thí nghiệm, giảng viên của lớp, ngày và giờ phòng thí nghiệm và thông tin liên hệ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị Chương trình/Thành viên Nhân viên Y tá phải có khả năng sửa đổi thông tin liên quan tới một Sinh viên Điều dưỡng, bao gồm mã số sinh viên, tên sinh viên, số điện thoại, e-mail, trạng thái (toàn thời gian hoặc bán thời gian) và chương trình học.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Ứng dụng Tranh chấp (Disputes) phải tuân thủ các tiêu chuẩn của công ty về tạo giao diện người dùng cho các ứng dụng dùng nội bộ và bên ngoài.", "labels": ["Legal (L)", "Look & Feel (LF)"], "label_ids": [3, 4]}
+{"text": "Tất cả các màn hình tạo ra như một phần của ứng dụng Tranh chấp phải tuân thủ tiêu chuẩn của công ty về tạo giao diện.", "labels": ["Legal (L)", "Look & Feel (LF)"], "label_ids": [3, 4]}
+{"text": "Danh sách các hồ sơ tranh chấp hiển thị sau khi thực hiện tìm kiếm phải được mã màu để dễ nhận dạng các hồ sơ tranh chấp dựa trên trạng thái hồ sơ.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "100% nhân viên dịch vụ chủ thẻ và nhân viên dịch vụ người bán phải sử dụng ứng dụng Disputes thường xuyên sau khóa đào tạo 2 ngày.", "labels": ["Scalability (SC)", "Usability (US)"], "label_ids": [9, 11]}
+{"text": "100% nhân viên dịch vụ chủ thẻ phải có khả năng tạo thành công một hồ sơ tranh chấp ngay lần đầu gặp gỡ sau khi hoàn thành khóa đào tạo.", "labels": ["Scalability (SC)", "Usability (US)"], "label_ids": [9, 11]}
+{"text": "100% nhân viên dịch vụ người bán phải có khả năng thực hiện thành công một hành động theo dõi trên hồ sơ tranh chấp ngay lần đầu gặp gỡ sau khi hoàn thành khóa đào tạo.", "labels": ["Scalability (SC)", "Usability (US)"], "label_ids": [9, 11]}
+{"text": "Thời gian chờ tối đa khi người dùng điều hướng từ màn hình này sang màn hình khác trong ứng dụng Disputes không được vượt quá 5 giây.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Ứng dụng Disputes phải hỗ trợ 350 người dùng đồng thời mà không làm suy giảm hiệu năng của ứng dụng.", "labels": ["Performance (PE)", "Scalability (SC)"], "label_ids": [7, 9]}
+{"text": "Ứng dụng Disputes phải khả dụng 24x7x365 ngoại trừ các cửa sổ bảo trì đã lên lịch sau: Thứ Hai – Thứ Bảy 03:00 đến 04:00 EST; Chủ Nhật 01:00 đến 05:00 EST.", "labels": ["Availability (A)", "Operability (O)"], "label_ids": [1, 6]}
+{"text": "Ứng dụng Disputes phải giao tiếp với Cơ sở dữ liệu Sao kê. Cơ sở dữ liệu Sao kê cung cấp chi tiết giao dịch cho Hệ thống Disputes. Tất cả chi tiết giao dịch phải được lấy từ Cơ sở dữ liệu Sao kê.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Ứng dụng Disputes phải giao tiếp với Cơ sở dữ liệu Thông tin Chủ thẻ. Cơ sở dữ liệu Thông tin Chủ thẻ cung cấp thông tin chi tiết về một chủ thẻ. Tất cả thông tin chi tiết về chủ thẻ phải được lấy từ Cơ sở dữ liệu Thông tin Chủ thẻ.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Ứng dụng Disputes phải giao tiếp với Cơ sở dữ liệu Thông tin Người bán. Cơ sở dữ liệu Thông tin Người bán cung cấp thông tin chi tiết về người bán. Tất cả thông tin chi tiết về người bán phải được lấy từ Cơ sở dữ liệu Thông tin Người bán.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Ứng dụng Disputes phải giao tiếp với ứng dụng Letters. Điều này cho phép ứng dụng Disputes yêu cầu các thư như một phần của quy trình khởi tạo tranh chấp và theo dõi tranh chấp. Tất cả yêu cầu thư phải được gửi tới ứng dụng Tiện ích In Thư (Print Letter Utility).", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Ứng dụng Disputes phải giao tiếp với Hệ thống Ghi sổ và Thanh toán Chủ thẻ. Điều này cho phép ứng dụng Disputes yêu cầu điều chỉnh tài khoản của chủ thẻ và người bán. Tất cả yêu cầu điều chỉnh phải được gửi tới Hệ thống Ghi sổ và Thanh toán Chủ thẻ.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Ứng dụng Disputes phải đảm bảo chỉ người dùng có mức truy cập phù hợp được phép khởi tạo yêu cầu tranh chấp.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Chỉ người dùng có quyền Cập nhật mới có thể khởi tạo yêu cầu tranh chấp.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Ứng dụng Disputes phải đảm bảo chỉ người dùng được ủy quyền mới được phép đăng nhập vào ứng dụng.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Tất cả người dùng được ủy quyền, sau khi được xác thực, phải có khả năng đăng nhập vào Hệ thống Disputes.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống Disputes phải sinh Báo cáo Người dùng chi tiết mọi người dùng mới được thêm và mọi thay đổi về mức truy cập của người dùng hiện có. Báo cáo này sẽ được xem xét cho mục đích kiểm toán.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Tất cả việc thêm người dùng mới và chỉnh sửa quyền truy cập của người dùng phải được ghi lại trên Báo cáo Người dùng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu một tài khoản người dùng bị thu hồi thì chỉ có Quản trị viên Hệ thống mới có thể khôi phục lại tài khoản đó.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Chỉ Quản trị viên Hệ thống mới có thể đặt lại tài khoản đăng nhập của người dùng bị thu hồi.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Ứng dụng Disputes sẽ thao tác và xem dữ liệu nghiệp vụ. Người dùng sẽ không có quyền truy cập trực tiếp vào tệp dữ liệu hoặc cơ sở dữ liệu.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Tất cả các cập nhật đối với tệp dữ liệu hoặc cơ sở dữ liệu phải được khởi tạo từ Hệ thống Disputes.", "labels": [], "label_ids": []}
+{"text": "Ứng dụng Disputes phải tuân thủ các yêu cầu pháp lý được quy định trong Quy định Hoạt động Thương nhân (Merchant Operating Regulations).", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Tất cả các quy tắc nghiệp vụ được quy định trong Hệ thống Disputes phải tuân thủ Quy định Hoạt động Thương nhân.", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Ứng dụng Disputes phải tuân thủ các yêu cầu pháp lý được quy định bởi Regulation E và Regulation Z điều chỉnh việc xử lý tranh chấp thẻ tín dụng.", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Tất cả các quy tắc nghiệp vụ được quy định trong Hệ thống Disputes phải tuân thủ các hướng dẫn của Regulation E và Regulation Z.", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Ứng dụng Disputes phải duy trì lịch sử chi tiết của mọi hành động mà người dùng thực hiện trên một hồ sơ tranh chấp để đảm bảo có một dấu vết kiểm toán đầy đủ nếu sau này có vấn đề liên quan tới hồ sơ tranh chấp đó.", "labels": ["Functional (F)", "Legal (L)"], "label_ids": [0, 3]}
+{"text": "Tất cả các hành động làm thay đổi một hồ sơ tranh chấp hiện có phải được ghi lại trong lịch sử hồ sơ.", "labels": ["Functional (F)", "Legal (L)", "Maintainability (MN)"], "label_ids": [0, 3, 5]}
+{"text": "Hệ thống Disputes phải có thể truy cập được bởi cả người dùng nội bộ và người dùng bên ngoài.", "labels": ["Availability (A)", "Security (SE)"], "label_ids": [1, 10]}
+{"text": "Hệ thống Disputes phải ngăn người dùng truy cập bất kỳ hồ sơ tranh chấp nào không thuộc cơ sở khách hàng thẻ của họ.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống Disputes sẽ hỗ trợ nhập liệu trực tiếp cho một hồ sơ tranh chấp qua giao diện người dùng hỗ trợ phản hồi theo thời gian thực cho người dùng.", "labels": ["Performance (PE)", "Scalability (SC)"], "label_ids": [7, 9]}
+{"text": "Hệ thống Disputes phải cung cấp các cấp độ truy cập khác nhau liên quan đến việc khởi tạo hồ sơ tranh chấp và các hành động theo dõi.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống Disputes phải cung cấp khả năng truy cập ở mức xem cho người dùng được ủy quyền của ứng dụng.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống Disputes phải cung cấp khả năng truy cập ở mức cập nhật cho người dùng được ủy quyền của ứng dụng.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Hệ thống Disputes phải cho phép người dùng chọn các giao dịch có thể tranh chấp (dựa trên tuổi của giao dịch) từ giao diện người dùng và khởi tạo một tranh chấp (yêu cầu truy xuất biên lai hoặc thông báo chargeback) cho giao dịch đã chọn.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải cho phép người dùng khởi tạo một hồ sơ tranh chấp duy nhất trên nhiều giao dịch thuộc cùng một người bán.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes sẽ cho phép người dùng tạo hoặc khởi tạo một yêu cầu truy xuất biên lai. Trong quá trình tạo yêu cầu truy xuất, hệ thống phải nhắc người dùng nhập tất cả thông tin cần thiết để tạo yêu cầu. Yêu cầu truy xuất biên lai là một tài liệu được gửi đến người bán để kiểm tra tính hợp lệ của một giao dịch.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải cho phép người dùng tạo ba loại yêu cầu truy xuất biên lai khác nhau. Ba loại đó là (1) Yêu cầu biên lai gốc (2) Yêu cầu bản sao biên lai hoặc (3) Yêu cầu hồ sơ (portfolio). Một portfolio gồm các tài liệu cung cấp bằng chứng mua hàng, chẳng hạn như tài liệu nhận được từ công ty cho thuê xe, nhiều hơn một biên lai bán hàng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải ngăn người dùng bên ngoài yêu cầu biên lai gốc. Yêu cầu biên lai gốc chỉ giới hạn cho người dùng nội bộ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải cung cấp xác nhận cho người dùng khi tạo yêu cầu truy xuất biên lai, nội dung xác nhận phải gồm: số hồ sơ tranh chấp, loại truy xuất được yêu cầu (bản sao/gốc/hồ sơ) và ngày hạn phản hồi của người bán.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải cho phép người dùng tạo hoặc khởi tạo một yêu cầu chargeback. Hệ thống phải nhắc người dùng nhập thông tin cần thiết để khởi tạo yêu cầu chargeback. Yêu cầu chargeback dẫn tới một thông báo chargeback được in và gửi tới người bán, cho biết tài khoản của họ sẽ bị hoàn tiền nếu không cung cấp bằng chứng rằng giao dịch tranh chấp là hợp lệ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải cung cấp xác nhận cho người dùng khi tạo một yêu cầu chargeback. Xác nhận phải gồm: số hồ sơ tranh chấp, loại chargeback được yêu cầu (tạm chờ hoặc ngay lập tức) và ngày hạn phản hồi của người bán.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải ngăn việc tạo các yêu cầu tranh chấp trùng lặp 100% thời gian.", "labels": ["Functional (F)", "Legal (L)", "Maintainability (MN)"], "label_ids": [0, 3, 5]}
+{"text": "Hệ thống Disputes phải cung cấp chính xác danh sách các mã lý do có thể cho một giao dịch nhất định. Danh sách mã lý do phải được suy ra dựa trên loại giao dịch và ngành nghề của người bán theo các quy tắc nghiệp vụ được định nghĩa cho Hệ thống Disputes.", "labels": ["Functional (F)", "Legal (L)", "Maintainability (MN)"], "label_ids": [0, 3, 5]}
+{"text": "Hệ thống Disputes phải cung cấp khả năng xem các hồ sơ tranh chấp hiện có.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải cung cấp chức năng Tìm kiếm. Phương thức tìm kiếm phải bao gồm khả năng tìm theo (1) số hồ sơ tranh chấp (2) số tài khoản người bán (3) số tài khoản chủ thẻ và (4) số phát hành. Ngoài các tiêu chí trên, chức năng tìm kiếm phải cho phép người dùng giới hạn kết quả theo khoảng ngày, loại tranh chấp (yêu cầu truy xuất biên lai hoặc thông báo chargeback), trạng thái hồ sơ (mở/đóng hoặc tất cả) và mã lý do tranh chấp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Một danh sách tất cả các hồ sơ tranh chấp phù hợp với tiêu chí tìm kiếm đã nhập phải được cung cấp cho người dùng. Danh sách hồ sơ phải phân biệt loại và/hoặc trạng thái của hồ sơ bằng cách mã màu cho dòng mục trong danh sách. Ví dụ: tất cả hồ sơ mở sẽ màu vàng và tất cả hồ sơ đóng sẽ màu xám.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Hệ thống Disputes phải cho phép người dùng xem lịch sử tất cả các hoạt động đã xảy ra trên hồ sơ tranh chấp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải cho phép người dùng theo dõi một hồ sơ tranh chấp thông qua các hành động theo dõi. Danh sách các hành động theo dõi có sẵn cho một hồ sơ phải được lọc dựa trên trạng thái hồ sơ và mức truy cập của người dùng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống Disputes phải ghi lại tên người dùng và ngày cho bất kỳ hoạt động nào tạo hoặc sửa đổi hồ sơ tranh chấp trong hệ thống. Lịch sử chi tiết của các hành động trên hồ sơ, bao gồm ngày và người dùng thực hiện hành động, phải được giữ cho mục đích kiểm toán.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đối với bất kỳ hành động hệ thống (không do người dùng khởi xướng) xảy ra trên hồ sơ như quá trình phân loại tuổi tranh chấp, một hoạt động hồ sơ sẽ được sinh ra. Khi người dùng đã khởi tạo hồ sơ tranh chấp đăng nhập lần tiếp theo, người đó phải được thông báo rằng một hành động hệ thống đã xảy ra trên hồ sơ tranh chấp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Tất cả yêu cầu thư phải được định dạng theo các hướng dẫn do hệ thống Tiện ích In Thư quy định.", "labels": ["Functional (F)", "Legal (L)", "Look & Feel (LF)"], "label_ids": [0, 3, 4]}
+{"text": "Bất kỳ hồ sơ tranh chấp nào đã đóng hơn 6 tháng phải bị xóa khỏi cơ sở dữ liệu tranh chấp trực tuyến.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải hỗ trợ Internet Explorer 5.5 trở lên.", "labels": ["Portability (PO)"], "label_ids": [8]}
+{"text": "Sản phẩm phải hỗ trợ Mozilla Firefox 1.0 trở lên.", "labels": ["Portability (PO)"], "label_ids": [8]}
+{"text": "Sản phẩm phải giao tiếp với Hệ thống Choice Parts. Hệ thống này cung cấp nguồn dữ liệu phụ tùng tái chế.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Sản phẩm phải chạy trên phần cứng hiện có cho tất cả các môi trường.", "labels": ["Portability (PO)"], "label_ids": [8]}
+{"text": "Sản phẩm phải tuân thủ các hướng dẫn Kiến trúc của công ty.", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Sản phẩm phải tuân thủ Hướng dẫn Giao diện Người dùng của công ty.", "labels": ["Legal (L)", "Look & Feel (LF)"], "label_ids": [3, 4]}
+{"text": "Sản phẩm phải tuân thủ bảng màu của công ty.", "labels": ["Legal (L)", "Look & Feel (LF)"], "label_ids": [3, 4]}
+{"text": "Giao diện của sản phẩm phải trông chuyên nghiệp.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Sản phẩm phải dễ sử dụng đối với nhân viên giám định (Adjusters) và nhân viên định giá tai nạn (Collision Estimators). 95% nhân viên giám định và nhân viên định giá tai nạn phải thấy sản phẩm dễ sử dụng.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải tăng năng suất cho nhân viên định giá tai nạn. 80% nhân viên định giá tai nạn phải đồng ý rằng năng suất của họ đã tăng trong vòng 1 tháng kể từ khi sử dụng sản phẩm.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Người dùng phải cảm thấy hài lòng khi sử dụng sản phẩm. 85% tổng số người dùng sẽ hài lòng với sản phẩm.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải dễ học đối với nhân viên giám định và nhân viên định giá tai nạn. Sản phẩm phải được học xong sau hai ngày đào tạo tại chỗ.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Người dùng phải dễ dàng tìm thấy hướng dẫn khi sử dụng sản phẩm. Trợ giúp người dùng có thể được tìm thấy trong 90% hệ thống.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Tìm kiếm phụ tùng tái chế không được mất hơn 15 giây. Kết quả tìm kiếm phải được trả về trong dưới 15 giây.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Tìm kiếm cơ sở sửa chữa ưu tiên không được mất hơn 8 giây. Kết quả cơ sở sửa chữa ưu tiên phải trả về trong 8 giây.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Báo cáo kiểm toán phụ tùng tái chế phải được trả về cho người dùng trong vòng 10 giây.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Đánh giá cơ sở sửa chữa ưu tiên phải được lưu trong vòng 5 giây.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Sản phẩm phải tuân theo lịch khả dụng trực tuyến của công ty. Ứng dụng chỉ được ngưng hoạt động trong 98% các cửa sổ bảo trì đã lên lịch theo lịch khả dụng.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Sản phẩm phải đạt độ khả dụng 98% (uptime). Sản phẩm không được ngừng hoạt động quá 2% thời gian trực tuyến có sẵn.", "labels": ["Availability (A)", "Fault Tolerance (FT)"], "label_ids": [1, 2]}
+{"text": "Sản phẩm phải có khả năng xử lý tới 1500 người dùng đồng thời. Hệ thống phải hoạt động với 1500 người dùng đồng thời.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Số bản ghi phụ tùng tái chế trung bình mỗi ngày là 50 000.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Sản phẩm phải có khả năng xử lý 10 000 người dùng đồng thời trong vòng 2 năm kể từ khi ra mắt ban đầu.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Đối với nhân viên định giá, sản phẩm phải có thể vận hành trong cơ sở sửa chữa trong điều kiện bẩn và ồn ào.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Sản phẩm phải giao tiếp với hệ thống ChoiceParts một lần mỗi ngày vào khoảng 01:00 AM.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Việc bảo trì sản phẩm sẽ nằm trong các cửa sổ bảo trì đã thiết lập của công ty.", "labels": ["Maintainability (MN)"], "label_ids": [5]}
+{"text": "Sản phẩm sẽ được hỗ trợ thông qua trung tâm hỗ trợ của công ty.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Việc cài đặt và nâng cấp sản phẩm sẽ do nhóm công nghệ middleware xử lý trong các khung thời gian ra mắt đã thiết lập.", "labels": ["Maintainability (MN)"], "label_ids": [5]}
+{"text": "Chỉ nhân viên giám định mới có thể yêu cầu báo cáo kiểm toán phụ tùng tái chế. Người dùng không có vai trò giám định sẽ không được phép yêu cầu kiểm toán phụ tùng tái chế.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Chỉ các nhân viên giám định có vai trò giám sát mới có thể cập nhật đánh giá cơ sở sửa chữa ưu tiên. Người dùng không giữ vai trò giám sát không được truy cập vào đánh giá cơ sở sửa chữa.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Chỉ nhân viên định giá tai nạn mới được tìm kiếm phụ tùng tái chế. Người dùng không có vai trò nhân viên định giá tai nạn sẽ không được truy cập chức năng tìm kiếm phụ tùng tái chế.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Chỉ dữ liệu hợp lệ mới được nhập vào hệ thống. Không được nhập bất kỳ dữ liệu không hợp lệ nào vào hệ thống.", "labels": ["Security (SE)", "Usability (US)"], "label_ids": [10, 11]}
+{"text": "Một công ty bảo hiểm không được phép xem dữ liệu hồ sơ yêu cầu bồi thường của công ty bảo hiểm khác.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Sản phẩm phải không chứa virus máy tính.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống phải ngăn chặn các cuộc tấn công độc hại bao gồm cả tấn công từ chối dịch vụ (DoS).", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Sản phẩm phải tuân thủ Sarbanes-Oxley.", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Sản phẩm phải tuân thủ các luật về ước tính liên quan đến việc sử dụng phụ tùng tái chế.", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Sản phẩm phải tuân thủ các quy định bảo hiểm liên quan đến xử lý khiếu nại.", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Người dùng phải tìm kiếm cơ sở sửa chữa ưu tiên bằng cách sử dụng thông tin xe, vị trí xe và bán kính tính theo dặm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Dữ liệu xe phải bao gồm năm sản xuất, hãng và mẫu xe.", "labels": [], "label_ids": []}
+{"text": "Vị trí xe phải bao gồm địa chỉ đường phố, thành phố, bang và mã bưu chính.", "labels": [], "label_ids": []}
+{"text": "Hệ thống phải xác định mã bưu chính dựa trên địa chỉ đường phố, thành phố và bang nếu mã bưu chính không biết.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Bán kính tìm kiếm phải nằm trong khoảng từ 1 đến 30 dặm.", "labels": [], "label_ids": []}
+{"text": "Hệ thống phải xác định cơ sở sửa chữa ưu tiên có điểm đánh giá cao nhất theo các tiêu chí đầu vào.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên giám định phải nhập cơ sở sửa chữa ưu tiên vào phân công ước lượng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên giám định phải có khả năng ghi đè cơ sở sửa chữa ưu tiên trong phân công ước lượng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Cơ sở sửa chữa ưu tiên phải được trả về cho người dùng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu không xác định được cơ sở sửa chữa ưu tiên, hệ thống phải trả về danh sách các cơ sở sửa chữa nằm trong bán kính.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên định giá phải tìm kiếm phụ tùng tái chế khả dụng bằng thông tin các bộ phận xe bị hỏng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên định giá phải tìm kiếm phụ tùng tái chế khả dụng bằng danh sách nhà cung cấp phụ tùng được ưu tiên.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải tìm kiếm phụ tùng tái chế khả dụng cho các bộ phận xe và nhà cung cấp được cung cấp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu không tìm thấy phụ tùng cho các nhà cung cấp ưu tiên, nhân viên định giá phải tìm kiếm theo mã bưu chính với bán kính 30 dặm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải lưu giữ các phụ tùng tái chế và nhà cung cấp trả về từ kết quả tìm kiếm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Thông tin phụ tùng tái chế khả dụng và nhà cung cấp của chúng phải được trả về cho người dùng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên định giá phải áp dụng các phụ tùng tái chế đã chọn vào ước lượng va chạm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên định giá không được áp dụng phụ tùng tái chế vào ước lượng va chạm nếu không có phụ tùng khả dụng nào được trả về.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên giám định phải xem xét ước lượng va chạm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên giám định phải yêu cầu kiểm toán phụ tùng tái chế cho ước lượng va chạm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Kết quả tìm kiếm phụ tùng tái chế được cung cấp cho nhân viên định giá phải được hệ thống truy xuất.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải tạo một báo cáo kiểm toán dựa trên phụ tùng tái chế khả dụng và ước lượng va chạm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Báo cáo kiểm toán phải bao gồm tổng số phụ tùng tái chế đã sử dụng trong ước lượng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Báo cáo kiểm toán phải bao gồm số phụ tùng tái chế khả dụng từ kết quả tìm kiếm ban đầu.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Báo cáo kiểm toán phải bao gồm tỷ lệ phần trăm phụ tùng tái chế khả dụng được sử dụng trong ước lượng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Báo cáo kiểm toán phải bao gồm tổng điểm kiểm toán là tổng của các mục dòng riêng lẻ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Báo cáo kiểm toán phải được hiển thị cho người dùng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Báo cáo kiểm toán phải có sẵn cho các nhân viên giám định khác tại các thời điểm sau này.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Người dùng phải chọn để xem đánh giá cơ sở sửa chữa ưu tiên.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Điểm đánh giá hiện tại của cơ sở sửa chữa phải được hiển thị cho người dùng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống sẽ hiển thị một bộ đánh giá trống nếu chưa có đánh giá nào được định nghĩa.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Người dùng phải nhập đánh giá mới dựa trên báo cáo kiểm toán.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đánh giá phải theo thang điểm từ 1 đến 10.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đánh giá phải bao gồm các hạng mục về nỗ lực sử dụng phụ tùng tái chế và việc sử dụng thực tế phụ tùng tái chế.", "labels": [], "label_ids": []}
+{"text": "Người dùng phải chọn lưu đánh giá cơ sở sửa chữa ưu tiên.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đánh giá cơ sở sửa chữa ưu tiên phải được hệ thống lưu.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải hoạt động với hầu hết hệ quản trị cơ sở dữ liệu (DBMS) trên thị trường dù DBMS được đặt cùng máy với sản phẩm hay trên máy khác trong mạng máy tính.", "labels": ["Operability (O)", "Portability (PO)"], "label_ids": [6, 8]}
+{"text": "Sản phẩm sẽ hoạt động cùng phần mềm máy chủ trên bất kỳ hệ điều hành nào có thể cài đặt môi trường thực thi Java.", "labels": ["Portability (PO)"], "label_ids": [8]}
+{"text": "Sản phẩm sẽ yêu cầu tích hợp với hệ quản trị cơ sở dữ liệu (DBMS). DBMS có thể đặt trên cùng một máy với sản phẩm hoặc trên máy riêng nằm trong cùng mạng máy tính.", "labels": ["Operability (O)", "Portability (PO)"], "label_ids": [6, 8]}
+{"text": "Sản phẩm phải sử dụng công nghệ máy chủ web/ứng dụng. Ví dụ mã nguồn mở bao gồm máy chủ web Apache, Tomcat và máy chủ ứng dụng JBoss.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Một hệ quản trị cơ sở dữ liệu như Oracle, DB2, MySQL hoặc HSQL sẽ cần được tích hợp với sản phẩm.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Giao diện và cảm nhận (Look and Feel) của sản phẩm phải có khả năng kết hợp các yếu tố của tổ chức khách hàng như logo, thương hiệu và bản sắc.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Sản phẩm phải có diện mạo trang nhã và chuyên nghiệp.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Sản phẩm phải khiến người dùng muốn sử dụng nó. 80% số người dùng được khảo sát báo cáo họ thường xuyên sử dụng sản phẩm sau 2 tuần kể từ khi ra mắt.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải dễ sử dụng. 90% người dùng có thể đặt chỗ phòng họp thành công trong vòng 5 phút kể từ khi bắt đầu sử dụng sản phẩm.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải cung cấp phản hồi cho người dùng khi cần thiết. 80% người dùng được khảo sát cho biết sản phẩm xác nhận hành động của họ một cách chính xác.", "labels": ["Performance (PE)", "Usability (US)"], "label_ids": [7, 11]}
+{"text": "Sản phẩm phải cho phép người dùng chọn ngôn ngữ từ một trong các quốc gia mục tiêu.", "labels": ["Functional (F)", "Usability (US)"], "label_ids": [0, 11]}
+{"text": "Sản phẩm phải cho phép tùy chỉnh trang khởi động và các thiết lập hiển thị.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Một nhân viên sẽ có thể sử dụng thành công sản phẩm trong vài phút. Sau khi tự điều hướng không chính thức dưới 15 phút, người dùng phải có khả năng thiết lập cuộc họp và đặt phòng họp thành công.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải sử dụng menu điều hướng tiêu chuẩn quen thuộc với hầu hết người dùng web.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải cho phép tìm kiếm trực quan các phòng họp có sẵn.", "labels": ["Functional (F)", "Usability (US)"], "label_ids": [0, 11]}
+{"text": "Sản phẩm phải tuân thủ Đạo luật Người khuyết tật Hoa Kỳ (Americans with Disabilities Act).", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Phản hồi phải đủ nhanh để không làm gián đoạn mạch suy nghĩ của người dùng. 90% tác vụ phải hoàn thành trong vòng 5 giây. 98% tác vụ phải hoàn thành trong vòng 8 giây.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Ngoại trừ sự cố máy chủ, phần mềm phải đạt thời gian hoạt động 99.99%.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Sản phẩm phải tạo một nhật ký ngoại lệ các sự cố gặp phải trong sản phẩm để truyền tới công ty chúng tôi phục vụ phân tích và khắc phục.", "labels": ["Functional (F)", "Maintainability (MN)"], "label_ids": [0, 5]}
+{"text": "Sản phẩm phải có khả năng xử lý tới 1 000 yêu cầu đồng thời. Con số này sẽ tăng lên 2 000 vào Bản phát hành 2. Khả năng xử lý đồng thời phải có thể đáp ứng các giờ cao điểm như sáng sớm và cuối buổi chiều.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Sản phẩm phải có khả năng xử lý 10 000 giao dịch mỗi giờ trong vòng hai năm kể từ khi ra mắt. Con số này sẽ tăng lên 20 000 vào Bản phát hành 2.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Sản phẩm dự kiến hoạt động ít nhất 5 năm cho mỗi cài đặt khách hàng.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Sản phẩm sẽ được sử dụng trong môi trường văn phòng.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Sản phẩm phải có thể giao tiếp với bất kỳ trình duyệt HTML nào. Sản phẩm phải truyền dữ liệu giữa người dùng và sản phẩm mà không gặp vấn đề. Sản phẩm phải hiển thị HTML đúng trong 80% số trình duyệt HTML được thử nghiệm (tối thiểu thử 8 trình duyệt).", "labels": ["Look & Feel (LF)", "Operability (O)", "Portability (PO)"], "label_ids": [4, 6, 8]}
+{"text": "Sản phẩm phải có khả năng giao tiếp với các hệ quản trị cơ sở dữ liệu khác nhau. Sản phẩm phải giao tiếp thành công với hệ quản trị cơ sở dữ liệu trên 100% các giao dịch.", "labels": ["Availability (A)", "Operability (O)", "Portability (PO)"], "label_ids": [1, 6, 8]}
+{"text": "Sản phẩm phải có khả năng giao tiếp với nhiều máy chủ email khác nhau. Sản phẩm phải có khả năng gửi email.", "labels": ["Operability (O)", "Portability (PO)"], "label_ids": [6, 8]}
+{"text": "Sản phẩm phải có sẵn để phân phối qua Internet dưới dạng tệp nhị phân hoặc tệp ZIP.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Sản phẩm phải có sẵn để phân phối dưới dạng đĩa CD đóng gói.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Sản phẩm sẽ được cấp phép theo các loại giấy phép: một máy chủ, từ hai đến năm máy chủ, hoặc năm máy chủ trở lên.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Người dùng mới phải có thể được thêm vào hệ thống trong vòng 10 phút. 90% người dùng mới có thể đăng nhập vào hệ thống trong vòng 10 phút.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Sản phẩm phải được thiết kế bằng cách sử dụng các mẫu thiết kế (Design Patterns) và các thực hành mã hóa tốt nhất. 90% lập trình viên bảo trì phần mềm có thể tích hợp chức năng mới vào sản phẩm trong 2 ngày làm việc.", "labels": ["Maintainability (MN)"], "label_ids": [5]}
+{"text": "Sản phẩm phải có khả năng cấu hình cao để sử dụng với nhiều hệ quản trị cơ sở dữ liệu khác nhau cho người dùng cuối. 80% người dùng cuối có thể tích hợp hệ quản trị cơ sở dữ liệu mới với sản phẩm mà không cần thay đổi mã phần mềm của sản phẩm.", "labels": ["Maintainability (MN)", "Portability (PO)"], "label_ids": [5, 8]}
+{"text": "Các bản phát hành bảo trì sẽ được cung cấp cho khách hàng một lần mỗi năm. Việc cài đặt các bản phát hành không được mất hơn 5 phút đối với 80% cơ sở khách hàng.", "labels": ["Maintainability (MN)", "Performance (PE)"], "label_ids": [5, 7]}
+{"text": "Mọi người dùng đã đăng ký sẽ có quyền truy cập vào trang hỗ trợ sản phẩm qua Internet. 70% người dùng đã đăng ký sẽ tìm thấy giải pháp cho vấn đề của họ trong vòng 5 phút sử dụng trang hỗ trợ.", "labels": ["Look & Feel (LF)", "Security (SE)", "Usability (US)"], "label_ids": [4, 10, 11]}
+{"text": "Khách hàng phải có thể dễ dàng tích hợp sơ đồ tòa nhà mới với sản phẩm trong suốt vòng đời sản phẩm. Việc tích hợp các sơ đồ mới vào sản phẩm phải có thể thực hiện được với ít hoặc không cần hỗ trợ từ nhân viên hỗ trợ sản phẩm.", "labels": ["Maintainability (MN)"], "label_ids": [5]}
+{"text": "Sản phẩm sẽ được dịch sang các ngôn ngữ nước ngoài ngoài ngôn ngữ của các nước thị trường mục tiêu trong các bản phát hành tương lai. Đối với mỗi thị trường mục tiêu mới nổi, việc cấu hình sản phẩm cho ngôn ngữ của thị trường đó không được vượt quá 5 ngày.", "labels": ["Maintainability (MN)", "Scalability (SC)", "Usability (US)"], "label_ids": [5, 9, 11]}
+{"text": "Sản phẩm dự kiến tích hợp với nhiều hệ quản trị cơ sở dữ liệu. Sản phẩm sẽ hoạt động với Oracle, SQL Server, DB2, MySQL, HSQL và MS Access.", "labels": ["Operability (O)", "Portability (PO)"], "label_ids": [6, 8]}
+{"text": "Sản phẩm phải có thể được cài đặt trong bất kỳ môi trường vận hành nào trong vòng 2 ngày.", "labels": ["Operability (O)", "Portability (PO)"], "label_ids": [6, 8]}
+{"text": "Sản phẩm phải đảm bảo chỉ nhân viên công ty hoặc người dùng bên ngoài có ID người dùng được công ty chấp thuận mới được truy cập sản phẩm. 100% lần đăng nhập phải là bởi nhân viên công ty hoặc người dùng bên ngoài có ID được công ty chấp thuận.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Chỉ quản lý mới có thể thực hiện truy vấn tìm kiếm đặt chỗ theo người dùng. 100% các truy vấn tìm kiếm đặt chỗ theo người dùng phải đến từ các lần đăng nhập của quản lý.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Sản phẩm phải đảm bảo dữ liệu trong cơ sở dữ liệu tương ứng với dữ liệu do người dùng nhập. Mỗi đặt phòng hội nghị trong hệ thống sẽ chứa cùng thông tin như đã được người dùng nhập.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Sản phẩm phải ngăn chặn việc nhập dữ liệu độc hại. Dữ liệu của sản phẩm và/hoặc các hệ thống phần cứng/phần mềm kề bên phải vẫn giữ nguyên 100% không bị hỏng khi mỗi lần dữ liệu độc hại được nhập vào sản phẩm.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Sản phẩm và/hoặc các cơ sở dữ liệu/hệ thống tệp phụ thuộc phải vẫn hoạt động khi có dữ liệu độc hại được nhập. Sản phẩm và/hoặc các cơ sở dữ liệu/hệ thống tệp phụ thuộc không được bị sập trong 100% các trường hợp dữ liệu độc hại được nhập vào sản phẩm.", "labels": ["Availability (A)", "Fault Tolerance (FT)", "Security (SE)"], "label_ids": [1, 2, 10]}
+{"text": "Sản phẩm phải có khả năng nhận các cập nhật phần mềm tự động khi xuất hiện các mối đe dọa mới. 100% khách hàng sẽ có thể nhận được các cập nhật phần mềm tự động gửi đến sản phẩm đã cài đặt.", "labels": ["Maintainability (MN)", "Security (SE)"], "label_ids": [5, 10]}
+{"text": "Ngôn ngữ của sản phẩm phải đáp ứng tất cả các quốc gia trong thị trường mục tiêu. 90% người tham gia khảo sát từ mỗi quốc gia thị trường mục tiêu sẽ thấy rằng ngôn ngữ của sản phẩm là chấp nhận được.", "labels": ["Scalability (SC)", "Usability (US)"], "label_ids": [9, 11]}
+{"text": "Sản phẩm phải có khả năng hiển thị ngày tháng và giờ theo vùng cài đặt (locale) của người dùng. 90% người tham gia khảo sát từ mỗi quốc gia thị trường mục tiêu sẽ thấy rằng định dạng ngày giờ của sản phẩm là chính xác.", "labels": ["Functional (F)", "Usability (US)"], "label_ids": [0, 11]}
+{"text": "Sản phẩm phải được phát triển bằng các thư viện ngôn ngữ lập trình J2SE/J2EE.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Sản phẩm phải ghi lại các mục cuộc họp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ thông báo cho nhân viên về các lời mời họp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải có khả năng gửi lời nhắc họp cho nhân viên.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải gán thông tin liên hệ của người tổ chức cho mỗi cuộc họp họ tạo.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ ghi nhận các xác nhận tham dự cuộc họp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải lưu trữ các phòng hội nghị mới.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải cập nhật các phòng hội nghị hiện có.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ có khả năng xóa các phòng hội nghị.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải có khả năng lưu trữ trang thiết bị phòng mới.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ cập nhật trang thiết bị phòng hiện có.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải có khả năng xóa trang thiết bị phòng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải cho phép người tổ chức mời các nhân viên khác tham dự cuộc họp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Mỗi khi một phòng hội nghị được đặt, lịch phòng hội nghị phải được cập nhật để phản ánh thời gian và ngày của việc đặt chỗ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải ghi nhận trạng thái vận chuyển của thiết bị được đặt.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải hiển thị sơ đồ tòa nhà công ty cho thấy vị trí các phòng hội nghị.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải ghi lại các chương trình họp đã được cập nhật.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải gửi xác nhận cuộc họp tới người tổ chức.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải hiển thị trang thiết bị phòng theo các tham số tìm kiếm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải hiển thị các phòng hội nghị theo các tham số tìm kiếm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải ghi nhận các loại cuộc họp khác nhau.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải ghi lại tất cả các thiết bị đã được đặt.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải thông báo cho nhân viên tòa nhà về các yêu cầu vận chuyển thiết bị.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ cho phép người dùng được cấp đặc quyền xem lịch họp trong nhiều dạng báo cáo khác nhau.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải có khả năng gửi thông báo cuộc họp qua nhiều phương thức do người dùng cuối chỉ định.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải có giao diện (Look and Feel) có thể tùy chỉnh.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Sản phẩm phải có giao diện người dùng trực quan.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm sẽ hiển thị trạng thái 'còn trống' cho các phòng hội nghị chưa được đặt.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Việc tái tạo Điều chỉnh Số lượng Tồn kho cho khoảng thời gian 30 ngày trước phải không mất quá 30 phút.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Hệ thống phải cho phép ít nhất 6 người dùng làm việc đồng thời.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Hệ thống phải tận dụng thiết bị máy tính hiện đang sở hữu.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Hệ thống phải có khả năng sao lưu tự động dữ liệu kinh doanh và khôi phục chúng theo yêu cầu.", "labels": ["Functional (F)", "Fault Tolerance (FT)"], "label_ids": [0, 2]}
+{"text": "Hệ thống phải duy trì an ninh nhất quán. Mọi thay đổi về mật khẩu người dùng và/hoặc quyền truy cập phải có hiệu lực trên tất cả các phần của hệ thống.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống phải kiểm soát quyền truy cập một cách chi tiết cho tất cả các phân hệ chính. Cần có khả năng gán quyền truy cập cho từng phân hệ một cách độc lập.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống phải đáp ứng tất cả các tiêu chuẩn kế toán áp dụng. Phiên bản cuối cùng của hệ thống phải vượt qua kiểm toán độc lập do kiểm toán viên được chứng nhận thực hiện.", "labels": ["Legal (L)", "Maintainability (MN)"], "label_ids": [3, 5]}
+{"text": "Hệ thống không được yêu cầu các giấy phép bên thứ ba bổ sung dẫn đến phí bản quyền.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Hệ thống phải cho phép tạo các chứng từ Điều chỉnh Số lượng Tồn kho theo yêu cầu.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cho phép tạo theo yêu cầu tất cả các chứng từ Điều chỉnh Số lượng Tồn kho kể từ một mốc thời gian nhất định.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Phân hệ IQA phải xem xét trạng thái tồn kho hiện tại và điều chỉnh tồn kho của các nguyên liệu thay thế tương ứng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải cho phép nhập, lưu trữ và sửa đổi công thức sản phẩm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Công thức sản phẩm phải cho phép sử dụng bán thành phẩm có công thức riêng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Thành phần trong công thức sản phẩm phải cho phép định nghĩa các nguyên liệu thay thế.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Các nguyên liệu thay thế trong công thức sản phẩm phải được nhập tự động bởi phân hệ PFE.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Các nguyên liệu thay thế trong công thức phải được lưu theo thứ tự được lưu bền.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm phải cho phép nhập, lưu trữ và sửa đổi thực đơn sản phẩm được sử dụng bởi các máy POS.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Phân hệ PME phải cho phép xây dựng thực đơn sản phẩm dựa trên danh sách sản phẩm được lưu trong hệ thống kế toán.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Phân hệ PME phải cho phép duy trì các submenu trong menu và sản phẩm trong submenu theo một thứ tự được quản lý và lưu bền.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Phân hệ PME phải cho phép một sản phẩm tồn tại trong hơn một submenu.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống RMS phải có giao diện giống Windows XP và sử dụng các tính năng GUI làm cho việc sử dụng trở nên trực quan.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Hệ thống phải tạo chứng từ Điều chỉnh Số lượng Tồn kho dựa trên dữ liệu bán hàng hàng ngày của sản phẩm và công thức sản phẩm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải tự động tạo chứng từ Điều chỉnh Số lượng Tồn kho khi dữ liệu Bán hàng Hàng ngày của sản phẩm có sẵn.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quản trị viên phải có thể kích hoạt thẻ trả trước qua mục Quản trị trong vòng dưới 5 giây.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Khách hàng phải có thể kiểm tra trạng thái thẻ trả trước của họ bằng cách nhập số PIN trong vòng dưới 5 giây.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Hệ thống phải cho phép khách hàng đăng ký trên website với tư cách người dùng 'pay as you go' trong vòng dưới 5 phút.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Hệ thống phải cho phép khách hàng đăng ký trên website với tư cách 'unlimited movie subscriber' trong vòng dưới 10 phút.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Hệ thống phải cho phép khách hàng hiện có đăng nhập vào website bằng địa chỉ email và mật khẩu trong vòng dưới 5 giây.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Hệ thống phải cho phép khách hàng hủy tài khoản; quá trình này không được kéo dài quá 2 phút. Cơ sở dữ liệu sẽ đánh dấu tài khoản là không hoạt động và người dùng sẽ không thể đăng nhập vào website.", "labels": ["Functional (F)", "Performance (PE)", "Security (SE)", "Usability (US)"], "label_ids": [0, 7, 10, 11]}
+{"text": "Hệ thống phải cho phép quản trị viên vô hiệu hóa tài khoản khách hàng trong vòng dưới 1 phút. Khách hàng sẽ không còn có thể truy cập website.", "labels": ["Functional (F)", "Performance (PE)", "Security (SE)"], "label_ids": [0, 7, 10]}
+{"text": "Hệ thống phải cho phép quản trị viên thêm/bỏ phim trên website trong vòng dưới 5 phút. Thông tin phim được nhập sẽ được lưu trong cơ sở dữ liệu và sẽ có sẵn trên website.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Hệ thống phải cho phép quản trị viên thêm/bỏ danh mục trên website trong vòng dưới 5 phút.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Hệ thống phải cho phép Quản lý Izogn truy cập thống kê doanh số và sử dụng trong vòng dưới 2 phút.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Hệ thống phải cho phép quản trị viên tạo mã PIN trả trước độc nhất trong vòng dưới 2 phút và xuất tệp Excel chứa các mã PIN đã tạo.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Website phải thu hút mọi đối tượng khán giả. Website phải trông vui nhộn và màu sắc nên sáng và rực rỡ.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Website nên mang nét châu Phi nhưng không nên làm xa lánh những người không phải người châu Phi. Website nên sử dụng hoạt ảnh trên các trang mô tả dịch vụ để thu hút sự chú ý của người dùng và khuyến khích họ đăng ký.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Thiết kế website nên hiện đại, gọn gàng và ngắn gọn.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Sản phẩm nên có thể được sử dụng bởi 90% người dùng mới trên Internet.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Người dùng chỉ phải điều hướng tối đa 4 trang để tạo tài khoản trên website.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Người dùng phải có thể truy cập phim phát trực tuyến của họ trong dưới 2 lần nhấn sau khi đăng nhập vào website.", "labels": ["Functional (F)", "Look & Feel (LF)", "Usability (US)"], "label_ids": [0, 4, 11]}
+{"text": "Khảo sát ẩn danh sẽ cho thấy 70% khách hàng cảm thấy thoải mái khi mua phim phát trực tuyến sau 2 tuần sử dụng website.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Khảo sát ẩn danh sẽ cho thấy 95% khách hàng cảm thấy thoải mái khi sử dụng và mua thẻ trả trước sau một tháng sử dụng hệ thống.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm phải lưu giữ sở thích mua hàng và thông tin của khách hàng.", "labels": ["Functional (F)", "Usability (US)"], "label_ids": [0, 11]}
+{"text": "Sản phẩm phải dễ để khách hàng mới sử dụng Internet có thể mua và xem phim phát trực tuyến. Khách hàng nên có thể mua và xem một phim được xác định trước trong vòng dưới 3 phút.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Sản phẩm phải sử dụng ký hiệu và từ ngữ mà người dùng quen thuộc với các website có thể hiểu một cách tự nhiên.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Website sẽ sử dụng các quy ước Internet tiêu chuẩn khi tương tác với người dùng.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Bất kỳ giao diện nào giữa người dùng và hệ thống tự động phải có thời gian phản hồi tối đa 5 giây, trừ khi được nêu ngoại lệ bên dưới.", "labels": ["Fault Tolerance (FT)", "Performance (PE)"], "label_ids": [2, 7]}
+{"text": "Khi mua phim phát trực tuyến hoặc thẻ trả trước bằng thẻ tín dụng, thời gian xử lý phải có thời gian phản hồi tối đa 15 giây.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Khi phát trực tuyến một bộ phim, thời gian đệm không được vượt quá 10 giây (chưa tính độ trễ trên kết nối của người dùng).", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Khi phát trực tuyến phim, việc đệm chỉ nên xảy ra nếu có độ trễ trong kết nối của người dùng.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Tất cả thông tin thẻ tín dụng sẽ được bảo mật trên máy chủ và chỉ có quản trị viên Izogn được ủy quyền mới có thể truy cập. Thông tin sẽ được mã hóa trong cơ sở dữ liệu.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Website phải sẵn sàng hoạt động 24 giờ mỗi ngày, 365 ngày mỗi năm.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Website phải đạt thời gian hoạt động 99,5%.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Tất cả phim sẽ được phát trực tuyến theo yêu cầu vào bất kỳ thời điểm nào trong ngày.", "labels": ["Functional (F)", "Availability (A)"], "label_ids": [0, 1]}
+{"text": "Website phải tiếp tục hoạt động nếu máy chủ phát trực tuyến gặp sự cố.", "labels": ["Availability (A)", "Fault Tolerance (FT)"], "label_ids": [1, 2]}
+{"text": "Website phải tiếp tục hoạt động nếu cổng thanh toán gặp sự cố.", "labels": ["Availability (A)", "Fault Tolerance (FT)"], "label_ids": [1, 2]}
+{"text": "Máy chủ phát trực tuyến sẽ hỗ trợ 50 kết nối phát trực tuyến đồng thời.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Máy chủ phát trực tuyến sẽ hỗ trợ tối đa 700 phim; có thể thêm các máy chủ mới để hỗ trợ nhiều phim hơn.", "labels": ["Maintainability (MN)", "Scalability (SC)"], "label_ids": [5, 9]}
+{"text": "Máy chủ sẽ hỗ trợ tối đa 1.000 người dùng đồng thời.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Website phải có khả năng hỗ trợ 100.000 khách hàng.", "labels": ["Scalability (SC)"], "label_ids": [9]}
+{"text": "Sản phẩm được kỳ vọng hoạt động trong giới hạn ngân sách bảo trì tối đa trong ít nhất 2 năm.", "labels": ["Maintainability (MN)", "Operability (O)"], "label_ids": [5, 6]}
+{"text": "Tất cả các khía cạnh của website phải được truy cập bằng trình duyệt web qua Internet.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Cùng phần cứng đang hỗ trợ website hiện tại sẽ được sử dụng để hỗ trợ hệ thống mới.", "labels": ["Operability (O)", "Portability (PO)"], "label_ids": [6, 8]}
+{"text": "Chúng ta phải có khả năng tương thích với các trình duyệt sau: IE 5.x, 6.0, Netscape 6.x, 7.x, 8.x và Firefox 1.0.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Website phải tương tác với API của CyberSource để xử lý giao dịch thẻ tín dụng.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Website phải hoạt động đầy đủ với MSN TV2.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Phim sẽ được mã hóa và phát trực tuyến qua Windows Media Player 9.0.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Phim sẽ được mã hóa cho luồng 56k và 256k.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Các cập nhật khuyến mãi cho website nên mất một ngày để cập nhật.", "labels": ["Maintainability (MN)", "Usability (US)"], "label_ids": [5, 11]}
+{"text": "Quản trị viên Izogn phải có thể cập nhật danh sách danh mục trên website trong vòng 2 phút.", "labels": ["Functional (F)", "Look & Feel (LF)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 4, 7, 11]}
+{"text": "Quản trị viên Izogn phải có thể thêm sản phẩm mới vào website trong vòng 2 phút.", "labels": ["Functional (F)", "Look & Feel (LF)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 4, 7, 11]}
+{"text": "Hệ thống sẽ cung cấp số điện thoại miễn phí 800 hoạt động 24 giờ để hỗ trợ khách hàng.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Website sẽ cung cấp mục trợ giúp với câu trả lời và giải pháp cho các vấn đề phổ biến.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhân viên Velkat sẽ sẵn sàng hỗ trợ qua điện thoại từ 7 giờ sáng đến 7 giờ tối, thứ Hai đến thứ Sáu, để cung cấp hỗ trợ kỹ thuật cho các quản trị viên Izogn.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Sản phẩm phải có thể được cài đặt trong môi trường được chỉ định trong vòng 1 ngày làm việc.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Chỉ khách hàng đã đăng ký mới có thể mua phim phát trực tuyến.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Khách hàng chỉ có thể phát trực tuyến một bộ phim nếu họ đã mua nó và đang trong thời hạn xem 2 ngày.", "labels": ["Legal (L)", "Security (SE)"], "label_ids": [3, 10]}
+{"text": "Chỉ nhân sự được ủy quyền mới có thể truy cập hồ sơ khách hàng trong cơ sở dữ liệu.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Chỉ quản trị viên mới có thể kích hoạt thẻ trả trước.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Chỉ nhân sự được ủy quyền mới có thể truy cập thông tin bán hàng.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Website phải ngăn chặn dữ liệu bị hỏng khi dữ liệu không chính xác được nhập vào.", "labels": ["Fault Tolerance (FT)", "Security (SE)"], "label_ids": [2, 10]}
+{"text": "Website phải bảo vệ khỏi lạm dụng có chủ ý và thông báo cho quản trị viên ở mọi sự cố xảy ra.", "labels": ["Maintainability (MN)", "Security (SE)"], "label_ids": [5, 10]}
+{"text": "Các script kiểm tra toàn vẹn dữ liệu sẽ được chạy hàng tuần để xác minh tính toàn vẹn của cơ sở dữ liệu.", "labels": ["Maintainability (MN)", "Security (SE)"], "label_ids": [5, 10]}
+{"text": "Website phải thông báo cho người dùng về các thực hành xử lý thông tin trước khi thu thập dữ liệu từ họ thông qua Chính sách Quyền riêng tư có thể truy cập trên tất cả các trang của website.", "labels": ["Functional (F)", "Security (SE)", "Usability (US)"], "label_ids": [0, 10, 11]}
+{"text": "Hệ thống phải thông báo cho khách hàng về các thay đổi trong chính sách thông tin của nó.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống chỉ được tiết lộ thông tin riêng tư khi tuân thủ chính sách thông tin của tổ chức.", "labels": ["Legal (L)", "Security (SE)"], "label_ids": [3, 10]}
+{"text": "Tất cả thông tin khách hàng sẽ được lưu trên cơ sở dữ liệu an toàn chỉ truy cập được bởi nhân sự được ủy quyền.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Tất cả thông tin thẻ tín dụng sẽ được mã hóa trong cơ sở dữ liệu.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Máy chủ phát trực tuyến sẽ có phần mềm chống virus để ngăn chặn nhiễm virus độc hại.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Website nên phục vụ tất cả các bộ tộc ở Nigeria.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Website không được gây phản cảm đối với các nhóm tôn giáo hoặc sắc tộc.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Website nên hấp dẫn tất cả người châu Phi, không chỉ người Nigeria.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Website nên sử dụng Flash để cung cấp hoạt ảnh trên trang chủ.", "labels": ["Look & Feel (LF)", "Operability (O)"], "label_ids": [4, 6]}
+{"text": "IzognMovies phải đáp ứng các yêu cầu cấp phép do các tổ chức có thẩm quyền đặt ra để có thể phát trực tuyến phim châu Phi.", "labels": ["Legal (L)"], "label_ids": [3]}
+{"text": "Website sẽ tuân thủ các tiêu chuẩn W3C.", "labels": ["Legal (L)", "Security (SE)"], "label_ids": [3, 10]}
+{"text": "Mã PHP sẽ tuân thủ các tiêu chuẩn PEAR.", "labels": ["Legal (L)", "Security (SE)"], "label_ids": [3, 10]}
+{"text": "Website sẽ cho phép khách hàng tìm kiếm phim theo tiêu đề, diễn viên hoặc đạo diễn.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi xem chi tiết một bộ phim, website sẽ hiển thị mô tả, diễn viên và đạo diễn của bộ phim đã được quản trị viên nhập.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Website phải yêu cầu và ủy quyền thanh toán bằng thẻ tín dụng trước khi cho phép người dùng phát trực tuyến một bộ phim.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải có khả năng phát trực tuyến phim đã mua qua Windows Media Player trong tối đa 2 ngày kể từ ngày mua.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Website phải cho phép khách hàng duyệt phim theo các danh mục do quản trị viên Izogn nhập vào.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Trang web cho phép khách hàng xem nhận xét về phim đã chọn do các khách hàng khác đăng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Trang web cho phép khách hàng thêm nhận xét về phim của chính họ cho phim đã chọn.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Trang web cho phép quản trị viên Izogn phê duyệt nhận xét do khách hàng đăng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống cho phép khách hàng thanh toán cho phim phát trực tuyến bằng thẻ trả trước.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Trang web cho phép khách hàng mua thẻ trả trước có mệnh giá $5, $10 hoặc $20 bằng thẻ tín dụng hoặc phương thức thanh toán gửi qua bưu điện.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống tự động cập nhật trang chính của trang web vào mỗi thứ Sáu và hiển thị 4 phim mới nhất đã được thêm vào trang web.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống cho phép người dùng cập nhật thông tin thanh toán và liên hệ qua mục 'Tài khoản của tôi' trên trang web.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Thẻ trả trước sẽ được phân phối qua email hoặc dưới dạng thẻ giấy in.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Phim chỉ có thể xem trực tuyến nếu khách hàng đã mua phim và còn trong khoảng thời gian 2 ngày được phép phát.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Trang web phải hỗ trợ các giai đoạn dùng thử miễn phí với các tham số khác nhau do Quản lý Izogn thiết lập.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Tất cả giao dịch bán phim phát trực tuyến sẽ được ghi vào cơ sở dữ liệu và có thể truy cập bởi quản trị viên.", "labels": ["Functional (F)", "Availability (A)"], "label_ids": [0, 1]}
+{"text": "Tất cả thông tin khách hàng đã đăng ký sẽ được lưu trữ và duy trì trong cơ sở dữ liệu ngay cả sau khi khách hàng hủy tài khoản.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Thống kê sử dụng hàng ngày phải được ghi lại và có thể truy cập bởi quản trị viên.", "labels": ["Functional (F)", "Maintainability (MN)"], "label_ids": [0, 5]}
+{"text": "Chủ sở hữu sẽ có quyền truy cập miễn phí vào tất cả các phim phát trực tuyến.", "labels": ["Availability (A)", "Security (SE)", "Usability (US)"], "label_ids": [1, 10, 11]}
+{"text": "Thời gian vòng đời tổng thể của lead phải hoàn tất trong 5 phút cho 90% khối lượng lead trong giờ làm việc từ 8:00 AM CST đến 8:00 PM CST; và trong 3 phút cho 99% khối lượng lead trong giờ ngoài giờ làm việc.", "labels": ["Availability (A)", "Performance (PE)"], "label_ids": [1, 7]}
+{"text": "Không có đánh giá lead nào hoàn thành trong thời gian dài hơn 25 giây đối với 97% tổng số lead được xử lý.", "labels": ["Availability (A)", "Performance (PE)"], "label_ids": [1, 7]}
+{"text": "Đối với các lead xử lý lâu hơn 25 giây, hệ thống sẽ ghi lại sự kiện và thời lượng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Quy trình phải phù hợp với các điều kiện thời gian xử lý do quá trình Auto Rep Assignment đặt ra, trong đó một lead được gán trong vòng 3 phút của tổng vòng đời.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Quy trình 'lead washing' sẽ hoạt động trong cấu trúc web service vật lý đã thiết lập.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Quy trình washing phải sử dụng định dạng dữ liệu trung lập không ràng buộc như XML khi nhận và xử lý dữ liệu lead.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Báo cáo lỗi sẽ có sẵn cho các đơn vị kỹ thuật trong chế độ 24x7.", "labels": ["Availability (A)", "Fault Tolerance (FT)"], "label_ids": [1, 2]}
+{"text": "Các tham số washing sẽ được cập nhật trong giờ bảo trì đã lên lịch.", "labels": ["Maintainability (MN)"], "label_ids": [5]}
+{"text": "Nhà cung cấp sẽ xác minh lead không hợp lệ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nhà cung cấp sẽ gửi bản ghi xác thực tín dụng để áp dụng vào hệ thống thanh toán doanh nghiệp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu lead được chấm điểm ở mức cao, hệ thống sẽ cung cấp dữ liệu lead và điểm số cho hệ thống doanh nghiệp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Chức năng leads washing sẽ xác thực tất cả lead nhận được từ web service để đảm bảo dữ liệu hợp lệ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Chức năng leads washing sẽ chèn tất cả lead được web service thu thập.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu điểm lead nằm trong khoảng điểm trung bình cao thì nó sẽ được xử lý bởi chức năng ARA.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu điểm lead nằm trong khoảng trung bình thì sẽ được đặt để xác minh thủ công bởi một Điều phối viên Tuyển sinh qua hệ thống eleads.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu điểm lead nằm trong khoảng trung bình thấp thì nó sẽ được trả lại cho nhà cung cấp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Chức năng leads washing sẽ tổng hợp cả thông tin chấm điểm liên hệ và học thuật thành một điểm tổng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Chức năng leads washing sẽ sử dụng các tham số do công ty và các trường cung cấp để chấm một phần điểm cho lead.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Chức năng leads washing sẽ trả lại dữ liệu lead cho nhà cung cấp kèm theo lý do bị từ chối.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Chức năng leads washing sẽ có một giao diện cho phép duy trì các tham số dữ liệu lead.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Chức năng leads washing sẽ xác minh xác thực người dùng và quyền của họ để thực hiện cập nhật tham số.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Chức năng leads washing sẽ lưu trữ mọi lead trùng lặp tiềm năng được trả về từ hệ thống doanh nghiệp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Trước khi gửi lead tới hệ thống doanh nghiệp, chức năng leads washing sẽ phân công lead cho một đại diện tuyển sinh.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Chức năng leads washing sẽ nhận một danh sách định kỳ các đại diện sẵn có từ hệ thống doanh nghiệp.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ mô phỏng hình ảnh các tàu trên biển.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Sản phẩm sẽ hiển thị các lưới bên trong một vòng tròn như góc nhìn từ kính tiềm vọng.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Sản phẩm sẽ hiển thị mỗi loại tàu trên lưới bằng hình ảnh của từng loại tàu tương ứng.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Khi người chơi tấn công thực hiện một phát bắn, sản phẩm sẽ mô phỏng âm thanh của một con tàu trên biển.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Khi một phát bắn được đánh dấu là trượt, sản phẩm sẽ mô phỏng âm thanh của một phát bắn trượt mục tiêu.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Khi một phát bắn được đánh dấu là trúng, sản phẩm sẽ mô phỏng âm thanh của một phát bắn trúng mục tiêu.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Khi một tàu bị chìm, sản phẩm sẽ mô phỏng âm thanh của một con tàu đang chìm.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Sản phẩm sẽ có sẵn 24 giờ một ngày, bảy ngày một tuần.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Sản phẩm sẽ có khả năng xử lý một số lượng lớn trò chơi đồng thời.", "labels": ["Performance (PE)", "Scalability (SC)"], "label_ids": [7, 9]}
+{"text": "Thời gian phản hồi phải đủ nhanh để duy trì nhịp trò chơi. Thời gian phản hồi không quá 2 giây cho 95% các phản hồi và không quá 4 giây cho các phản hồi còn lại.", "labels": ["Performance (PE)"], "label_ids": [7]}
+{"text": "Sản phẩm sẽ bảo vệ danh tính người chơi. Sản phẩm sẽ không cung cấp cho người chơi quyền truy cập vào thông tin có thể tiết lộ danh tính của người chơi khác.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Sản phẩm sẽ trực quan và dễ hiểu. Chín trong mười người dùng sẽ có thể hoàn thành một trò chơi thành công mà không cần đào tạo.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Sản phẩm sẽ dành cho người chơi hiểu tiếng Anh, tiếng Tây Ban Nha và tiếng Pháp. Sản phẩm sẽ cho phép người dùng chọn ngôn ngữ khi truy cập.", "labels": ["Functional (F)", "Usability (US)"], "label_ids": [0, 11]}
+{"text": "Sản phẩm sẽ không cung cấp cho người chơi quyền truy cập vào thông tin có thể tiết lộ danh tính của người chơi khác.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Sản phẩm sẽ duy trì một danh sách người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ cho phép người dùng xác định bản thân là người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi một trò chơi đã được khởi tạo, sản phẩm sẽ làm cho các người chơi được giao cho trò chơi không thể được chọn từ danh sách người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ cho phép người dùng xóa bản thân khỏi danh sách người chơi bất kỳ lúc nào.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ làm cho các người chơi không hoạt động không thể được chọn từ danh sách người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ loại bỏ những người chơi không hoạt động trong 24 giờ khỏi danh sách người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ cho phép người chơi khởi xướng một trò chơi bằng cách chọn một người chơi khác đang có sẵn từ danh sách người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi trò chơi được khởi tạo, sản phẩm sẽ hiển thị một lưới phòng thủ cho mỗi người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi trò chơi được khởi tạo, sản phẩm sẽ hiển thị một lưới tấn công cho mỗi người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ ngăn một người chơi xem lưới tấn công hoặc phòng thủ của người chơi khác.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi trò chơi được khởi tạo, sản phẩm sẽ cho phép mỗi người chơi đặt 5 tàu của họ lên lưới phòng thủ tương ứng.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ cho phép người chơi đặt tàu theo phương ngang trên lưới của họ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ cho phép người chơi đặt tàu theo phương dọc trên lưới của họ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ cho phép người chơi đặt tàu theo đường chéo trên lưới của họ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ ngăn người chơi đặt tàu chồng lên nhau trên lưới của họ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi cả hai người chơi đã đặt xong 5 tàu trên lưới phòng thủ, sản phẩm sẽ xác định trạng thái của mỗi người chơi cho lượt đầu tiên.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Cho mỗi lượt, sản phẩm sẽ xác định một người chơi ở vai trò tấn công và một người chơi ở vai trò phòng thủ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ duy trì trạng thái của mỗi người chơi cho một lượt, là tấn công hoặc phòng thủ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Vào đầu mỗi lượt, sản phẩm sẽ thông báo trạng thái của người chơi cho từng người.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Trong mỗi lượt, sản phẩm sẽ cho phép người chơi tấn công xác định một phát bắn.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đối với mỗi phát bắn, sản phẩm sẽ kiểm tra lưới phòng thủ của người chơi phòng thủ để xác định liệu phát bắn trúng hay trượt.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đối với mỗi phát bắn, sản phẩm sẽ thông báo cho các người chơi biết phát bắn là trúng hay trượt.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đối với mỗi phát bắn, sản phẩm sẽ đánh dấu phát bắn là trúng hoặc trượt trên lưới phòng thủ của người chơi phòng thủ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Đối với mỗi phát bắn, sản phẩm sẽ đánh dấu phát bắn là trúng hoặc trượt trên lưới tấn công của người chơi tấn công.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi phát bắn trúng dẫn đến việc một tàu bị chìm, sản phẩm sẽ thông báo cho các người chơi rằng tàu đã bị chìm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi phát bắn trúng làm tàu chìm, sản phẩm sẽ đánh dấu tàu là đã chìm trên lưới phòng thủ của người chơi phòng thủ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi phát bắn trúng làm tàu chìm, sản phẩm sẽ chỉ ra loại tàu đã chìm trên lưới phòng thủ của người chơi phòng thủ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi phát bắn trúng làm tàu chìm, sản phẩm sẽ đánh dấu tàu là đã chìm trên lưới tấn công của người chơi tấn công.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu phát bắn được đánh dấu là trúng, sản phẩm sẽ cho phép người chơi tấn công thực hiện phát bắn tiếp theo.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu phát bắn bị đánh dấu là trượt, sản phẩm sẽ chuyển trạng thái của người chơi tấn công sang phòng thủ.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Nếu phát bắn bị đánh dấu là trượt, sản phẩm sẽ chuyển trạng thái của người chơi phòng thủ sang tấn công.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ tiếp tục phân chia lượt cho đến khi trò chơi kết thúc.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ kết thúc một trò chơi khi một phát bắn của người chơi tấn công làm chìm con tàu cuối cùng của người chơi phòng thủ mà trước đó chưa được đánh dấu là đã chìm.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Sản phẩm sẽ cho phép người chơi kết thúc trò chơi bất kỳ lúc nào trong quá trình chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi trò chơi kết thúc, sản phẩm sẽ thông báo cho các người chơi rằng trò chơi đã kết thúc.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Thông báo về việc kết thúc trò chơi sẽ bao gồm lý do trò chơi kết thúc (ví dụ: một người chơi đã thắng trò chơi hoặc một người chơi đã kết thúc trò chơi).", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi trò chơi kết thúc, sản phẩm sẽ cho phép mỗi người chơi xác định mình là người chơi có sẵn trong danh sách người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Khi trò chơi kết thúc, sản phẩm sẽ cho phép mỗi người chơi xóa bản thân khỏi danh sách người chơi.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Hệ thống phải dễ sử dụng cho các nhân viên gọi điện và giám sát. Nhân viên gọi và giám sát phải có khả năng hoàn thành bất kỳ tác vụ hệ thống nào trong vòng 2 phút.", "labels": ["Performance (PE)", "Usability (US)"], "label_ids": [7, 11]}
+{"text": "Hệ thống phải dễ học cho nhân viên gọi điện và giám sát. Nhân viên gọi và giám sát sẽ học cách sử dụng hệ thống trong vòng 10 phút.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Hệ thống phải có khả năng phản hồi. Tại Trung tâm DePaul TeleServices, khi một giám sát dùng hệ thống để xem lịch làm việc của một nhân viên gọi, thời gian phản hồi của hệ thống không được vượt quá 2 giây trong 90% thời gian và không được vượt quá 5 giây trong phần thời gian còn lại.", "labels": ["Performance (PE)", "Usability (US)"], "label_ids": [7, 11]}
+{"text": "Trên kết nối 56k, thời gian phản hồi hệ thống cho tất cả thao tác không được vượt quá 6 giây trong 90% thời gian.", "labels": ["Availability (A)", "Performance (PE)"], "label_ids": [1, 7]}
+{"text": "Trên kết nối 112k hoặc nhanh hơn, thời gian phản hồi hệ thống cho tất cả thao tác không được vượt quá 3 giây trong 90% thời gian.", "labels": ["Availability (A)", "Performance (PE)"], "label_ids": [1, 7]}
+{"text": "Hệ thống phải có độ sẵn sàng cao mọi ngày trong năm. Hệ thống phải có sẵn để sử dụng từ 12:00 AM đến 6:00 PM mọi ngày trong năm.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Hệ thống phải có sẵn để sử dụng từ 7:00 AM đến 11:59 PM mọi ngày trong năm.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Sản phẩm phải độc lập với trình duyệt web. Sản phẩm phải chạy được bằng Internet Explorer và Netscape Navigator.", "labels": ["Portability (PO)"], "label_ids": [8]}
+{"text": "Sản phẩm phải đảm bảo chỉ có giám sát mới được quảng cáo các khung thời gian trống. Sản phẩm phải đảm bảo rằng giám sát được phép truy cập chức năng quảng cáo khung thời gian trống.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Sản phẩm phải đảm bảo chỉ có giám sát mới có thể nhập lịch làm việc của nhân viên gọi. Sản phẩm phải đảm bảo rằng giám sát được phép truy cập để nhập lịch của nhân viên gọi.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Sản phẩm phải đảm bảo chỉ có giám sát mới có thể xem lịch của tất cả nhân viên gọi. Sản phẩm phải đảm bảo rằng giám sát được phép truy cập để xem lịch của tất cả nhân viên gọi.", "labels": ["Functional (F)", "Security (SE)"], "label_ids": [0, 10]}
+{"text": "Giao diện phải có ngoại quan đơn giản. Trong khảo sát giao diện và khả năng sử dụng, 90% người thử nghiệm beta phải báo cáo rằng giao diện đủ đơn giản.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Giao diện phải hấp dẫn đối với nhân viên gọi và giám sát. Trong khảo sát giao diện và khả năng sử dụng, 80% người thử nghiệm beta phải báo cáo rằng giao diện hấp dẫn.", "labels": ["Look & Feel (LF)", "Performance (PE)"], "label_ids": [4, 7]}
+{"text": "Sản phẩm sẽ cung cấp Dịch vụ Giám sát dựa trên GUI. Quản trị hệ thống sẽ giám sát trao đổi thông điệp, dự đoán và xác định sự cố, và cũng sẽ cung cấp hỗ trợ nội bộ và bên ngoài.", "labels": ["Functional (F)", "Maintainability (MN)", "Operability (O)"], "label_ids": [0, 5, 6]}
+{"text": "Sản phẩm phải tuân thủ Khung Hướng dẫn Phát triển Ứng dụng của Thành phố Chicago. Khung Phát triển Ứng dụng sẽ cung cấp Giao diện Người dùng Đồ họa có cấu trúc.", "labels": ["Legal (L)", "Look & Feel (LF)"], "label_ids": [3, 4]}
+{"text": "Sản phẩm sẽ cung cấp Dịch vụ Giám sát. Sản phẩm sẽ dễ sử dụng cho Quản trị hệ thống và DBA sau hai tuần sử dụng.", "labels": ["Functional (F)", "Usability (US)"], "label_ids": [0, 11]}
+{"text": "Sản phẩm sẽ cung cấp Dịch vụ Theo dõi Lỗi. Sản phẩm sẽ giúp Quản trị hệ thống và DBA giải quyết lỗi giao dịch trong 99% trường hợp.", "labels": ["Functional (F)", "Fault Tolerance (FT)", "Maintainability (MN)", "Usability (US)"], "label_ids": [0, 2, 5, 11]}
+{"text": "Sản phẩm sẽ cung cấp Cổng thông tin (Portals). Sản phẩm sẽ giúp Quản trị hệ thống phân tích các giao dịch bằng báo cáo ad-hoc và KPI (Key Performance Indicators).", "labels": ["Functional (F)", "Usability (US)"], "label_ids": [0, 11]}
+{"text": "Sản phẩm sẽ cung cấp Nhắn tin Bất đồng bộ. Sản phẩm sẽ cung cấp nhắn tin bất đồng bộ để cho phép xử lý song song và giảm chi phí chung trong truyền thông.", "labels": ["Functional (F)", "Performance (PE)", "Usability (US)"], "label_ids": [0, 7, 11]}
+{"text": "Sản phẩm sẽ cung cấp đa luồng và Cân bằng tải. Sản phẩm sẽ cung cấp công nghệ đa luồng cũng như cân bằng tải để vượt qua các đỉnh tải dữ liệu và lưu lượng.", "labels": ["Performance (PE)", "Scalability (SC)", "Usability (US)"], "label_ids": [7, 9, 11]}
+{"text": "Sản phẩm sẽ xử lý thông điệp trong vòng 2 giây. Thời gian xử lý tối đa cho một thông điệp là 2 giây.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Sản phẩm sẽ kiểm tra hệ thống để lấy thông điệp mỗi giây. Sản phẩm sẽ kiểm tra hệ thống cho thông điệp mới ở tần suất tối đa mỗi 1 giây.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Sản phẩm sẽ hỗ trợ Thay đổi động và thêm tài nguyên minh bạch. Sản phẩm sẽ hỗ trợ thêm tài nguyên minh bạch và hỗ trợ thay đổi động để cung cấp khả năng mở rộng và tránh gián đoạn dịch vụ hơn 1 ngày.", "labels": ["Functional (F)", "Fault Tolerance (FT)", "Scalability (SC)"], "label_ids": [0, 2, 9]}
+{"text": "Sản phẩm sẽ có sẵn 99% thời gian. Lý do: Để tránh gián đoạn dịch vụ trong các giai đoạn phản hồi dịch vụ khách hàng bận rộn nhất. Sản phẩm sẽ có sẵn 99.99% thời gian trong các ngày làm việc bình thường.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Sản phẩm sẽ mạnh mẽ. Sản phẩm sẽ có cơ chế tránh lỗi dựa trên việc áp dụng các tiêu chuẩn.", "labels": ["Fault Tolerance (FT)", "Performance (PE)"], "label_ids": [2, 7]}
+{"text": "Sản phẩm sẽ mạnh mẽ với khả năng chịu lỗi. Sản phẩm sẽ có khả năng chịu lỗi bằng cách sử dụng kỹ thuật phục hồi, giao dịch bù trừ và định tuyến tránh lỗi.", "labels": ["Fault Tolerance (FT)"], "label_ids": [2]}
+{"text": "Sản phẩm sẽ có khả năng xử lý tất cả giao dịch. Sản phẩm sẽ xử lý tối thiểu 1 triệu giao dịch mỗi năm.", "labels": ["Performance (PE)", "Scalability (SC)"], "label_ids": [7, 9]}
+{"text": "Sản phẩm sẽ độc lập với nền tảng. Sản phẩm sẽ cho phép truy cập tới mọi loại môi trường phát triển và nền tảng.", "labels": ["Operability (O)", "Portability (PO)"], "label_ids": [6, 8]}
+{"text": "Sản phẩm sẽ kết nối CSR và Datastream. Sản phẩm sẽ trao đổi thông điệp giữa CSR và EAM theo thời gian thực mà không có bất kỳ giao diện trực tiếp nào giữa hai hệ thống.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Sản phẩm sẽ tiếp tục hoạt động trong quá trình nâng cấp, thay đổi hoặc thêm tài nguyên mới. Sản phẩm sẽ có khả năng tiếp tục hoạt động mà không gây gián đoạn dịch vụ do việc thêm tài nguyên mới.", "labels": ["Maintainability (MN)", "Portability (PO)"], "label_ids": [5, 8]}
+{"text": "Sản phẩm sẽ được cập nhật định kỳ. Sản phẩm sẽ có một tính năng lớn mới được giới thiệu mỗi sáu tháng và các bản vá bảo trì theo quý.", "labels": ["Maintainability (MN)"], "label_ids": [5]}
+{"text": "Sản phẩm sẽ hoạt động trên mọi nền tảng. Sản phẩm sẽ tiếp nhận bất kỳ công nghệ mới nào mà không cần thay đổi kiến trúc.", "labels": ["Maintainability (MN)", "Portability (PO)"], "label_ids": [5, 8]}
+{"text": "Sản phẩm sẽ có bảo mật. Sản phẩm sẽ cung cấp xác thực và phân quyền.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Sản phẩm sẽ cung cấp An ninh Thông tin. Sản phẩm sẽ đảm bảo tính riêng tư bằng mã hóa, WS-Security và kiểm tra tính toàn vẹn.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Sản phẩm sẽ có khả năng kiểm toán. Sản phẩm sẽ lưu trữ thông điệp tối thiểu một năm cho mục đích kiểm toán và theo dõi giao dịch.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống sẽ sử dụng tiêu chuẩn thương hiệu IBM và CCR. Giao diện phải có một logo IBM và một logo CCR.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Hệ thống phải có thể hiển thị trên bất kỳ máy tính làm việc nào mà người dùng CCR có thể có. Giao diện hệ thống phải được định dạng để hiển thị ở độ phân giải 800x600 pixel.", "labels": ["Look & Feel (LF)", "Portability (PO)"], "label_ids": [4, 8]}
+{"text": "Giao diện hệ thống sẽ sử dụng danh pháp của CCR. Hệ thống phải sử dụng danh pháp giống như trong hệ thống WCS hiện có và các báo cáo.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Giao diện phải tóm tắt dữ liệu theo cách hấp dẫn đối với ban quản lý CCR. Mỗi loại báo cáo phải có ít nhất một bản tóm tắt cấp cao được hiển thị trên bảng điều khiển/kết quả.", "labels": ["Functional (F)", "Look & Feel (LF)"], "label_ids": [0, 4]}
+{"text": "Hệ thống phải sử dụng giao diện nhấp-chọn. 100% chức năng lựa chọn và điều hướng phải có thể được kích hoạt/chọn bằng chuột hoặc bàn phím.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Giao diện phải dễ sử dụng. 90% người dùng nên có thể sử dụng hệ thống để tạo báo cáo thành công trong lần sử dụng đầu tiên. Giao diện nên tuân thủ các tiêu chuẩn khả dụng của IBM.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Báo cáo phải dễ tạo. Báo cáo phải được tạo chỉ với một cú nhấp nút và xuất khẩu chỉ với một cú nhấp nút (sau khi chọn báo cáo).", "labels": ["Operability (O)", "Usability (US)"], "label_ids": [6, 11]}
+{"text": "Người dùng phải có khả năng sử dụng hệ thống mà không cần hướng dẫn sau một khoảng thời gian ngắn. Sau một lần sử dụng, người dùng nên hiểu và nhớ 90% cách sử dụng và điều hướng hệ thống.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Tất cả người dùng CCR phải được đào tạo trước khi hệ thống WCS được triển khai. Một buổi đào tạo sẽ được tổ chức cho 100% người dùng CCR trước khi triển khai hệ thống (dựa trên việc người dùng CCR có sẵn).", "labels": [], "label_ids": []}
+{"text": "Hệ thống WCS sẽ sử dụng danh pháp và thuật ngữ phù hợp như được định nghĩa bởi tổ chức Corporate Community Grants. Tất cả giao diện và báo cáo sẽ trải qua các bài kiểm tra khả dụng bởi người dùng CCR.", "labels": ["Legal (L)", "Look & Feel (LF)", "Usability (US)"], "label_ids": [3, 4, 11]}
+{"text": "Hệ thống WCS sẽ luôn sẵn có miễn là mạng nội bộ W3 của IBM có thể truy cập. Hệ thống WCS sẽ có sẵn 95% thời gian khi mạng nội bộ W3 của IBM có sẵn.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Hệ thống WCS sẽ có khả năng kết nối các cơ sở dữ liệu WCS được chỉ định khác hiện chưa được bao gồm trong hệ thống.", "labels": ["Portability (PO)", "Scalability (SC)"], "label_ids": [8, 9]}
+{"text": "Hệ thống WCS sẽ có khả năng bao gồm dữ liệu cho các khu vực ngoài Hoa Kỳ và được truy cập bởi người dùng ngoài Hoa Kỳ nếu được quản lý CCR phê duyệt.", "labels": ["Scalability (SC)", "Usability (US)"], "label_ids": [9, 11]}
+{"text": "Hệ thống WCS sẽ chạy trong môi trường Windows. WCS sẽ được người dùng truy cập qua Internet trên máy tính IBM chạy hệ điều hành Windows 2000 hoặc cao hơn.", "labels": ["Operability (O)", "Portability (PO)"], "label_ids": [6, 8]}
+{"text": "Phần Brio của hệ thống WCS phải có khả năng xuất file dưới dạng bảng tính (định dạng Microsoft Excel và Lotus 1-2-3). Brio sẽ cung cấp các nút trong giao diện người dùng để tạo/xuất báo cáo ở định dạng tệp .xls hoặc .123.", "labels": ["Functional (F)", "Look & Feel (LF)", "Operability (O)"], "label_ids": [0, 4, 6]}
+{"text": "Hệ thống WCS phải chạy truy vấn tới cơ sở dữ liệu WCS một lần nữa (vào một ngày được chỉ định) để cập nhật dữ liệu có sẵn cho người dùng CCR. Các truy vấn tới cơ sở dữ liệu bên ngoài để làm mới dữ liệu phải được thực hiện hàng tuần.", "labels": ["Functional (F)", "Fault Tolerance (FT)", "Maintainability (MN)"], "label_ids": [0, 2, 5]}
+{"text": "Tất cả thay đổi, cập nhật và bổ sung cho hệ thống WCS phải được cập nhật trong Hướng dẫn Phát triển WCS và Hướng dẫn Người dùng WCS. Mọi thay đổi phải được phản ánh trong tài liệu hệ thống WCS.", "labels": ["Maintainability (MN)"], "label_ids": [5]}
+{"text": "Hệ thống chỉ được truy cập bởi nhân viên Corporate Community Grants (CCR) được ủy quyền. Người dùng phải được xác thực bằng tên đăng nhập và mật khẩu mạng nội bộ IBM của họ.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Hệ thống WCS sẽ không cho phép bất kỳ người dùng nào đăng nhập tự động. Cookie chứa thông tin đăng nhập WCS về người dùng sẽ không được lưu trên máy tính của người dùng.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Mỗi chủ đội sẽ cần sử dụng tên đăng nhập và mật khẩu để được xác thực nhằm truy cập trang của chủ đội.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Ủy viên sẽ là người dùng được ủy quyền duy nhất cho mỗi giải đấu để điều chỉnh cài đặt giải đấu.", "labels": ["Legal (L)", "Security (SE)"], "label_ids": [3, 10]}
+{"text": "Mỗi trang sẽ chứa một menu điều hướng hiển thị mục mục lục mà trang hiện tại thuộc về.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Mỗi trang sẽ có định dạng tương tự với các mục hành động ở một vị trí và các nút điều hướng ở vị trí khác.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Bảng tin sẽ chứa 5 thông điệp được đăng gần đây nhất trên trang giải đấu. Các thông điệp sẽ chứa tối đa 150 ký tự đầu tiên của nội dung.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Người dùng mới phải có thể điều hướng qua các trang giải đấu và đội trong vòng 30 giây kể từ khi vào trang khởi động.", "labels": ["Look & Feel (LF)", "Performance (PE)", "Usability (US)"], "label_ids": [4, 7, 11]}
+{"text": "Người dùng phải có thể truy cập các trang 'thêm', 'loại bỏ' và 'đổi cầu thủ' chỉ với một cú nhấp từ trang của chủ đội.", "labels": ["Look & Feel (LF)", "Usability (US)"], "label_ids": [4, 11]}
+{"text": "Người dùng phải có thể xem ít nhất 25 thống kê và điểm của cầu thủ NFL trên mỗi trang.", "labels": ["Functional (F)", "Performance (PE)"], "label_ids": [0, 7]}
+{"text": "Ứng dụng phải yêu cầu người dùng xác nhận việc loại bỏ hoặc trao đổi cầu thủ trước khi thực hiện hành động.", "labels": ["Functional (F)"], "label_ids": [0]}
+{"text": "Ứng dụng phải có khả năng hoàn tất mọi giao dịch của người dùng trong vòng một phần tư giây kể từ khi nhận yêu cầu qua mạng.", "labels": ["Availability (A)", "Performance (PE)"], "label_ids": [1, 7]}
+{"text": "Ứng dụng chỉ được phép có thời gian ngừng hoạt động tối đa 10 phút mỗi năm.", "labels": ["Availability (A)"], "label_ids": [1]}
+{"text": "Ứng dụng phải chạy trên một máy chủ ứng dụng web.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Một cơ sở dữ liệu chính sẽ được dùng để lưu dữ liệu đệm cho người dùng đang hoạt động.", "labels": ["Maintainability (MN)", "Operability (O)"], "label_ids": [5, 6]}
+{"text": "Một cơ sở dữ liệu phụ sẽ được dùng để lưu trữ thống kê và dữ liệu lịch sử.", "labels": ["Maintainability (MN)", "Operability (O)"], "label_ids": [5, 6]}
+{"text": "Các bản cập nhật ứng dụng sẽ diễn ra từ 3:00 AM đến 6:00 AM CST vào sáng thứ Tư giữa mùa NFL.", "labels": ["Maintainability (MN)"], "label_ids": [5]}
+{"text": "Các phiên bản hệ thống mới sẽ được phát hành vào đầu mỗi mùa NFL.", "labels": ["Maintainability (MN)"], "label_ids": [5]}
+{"text": "Hệ thống RFS nên sẵn sàng 24/7, đặc biệt trong giai đoạn lập ngân sách. Hệ thống RFS phải có sẵn 90% thời gian trong năm và 98% trong giai đoạn lập ngân sách. Trong 2% thời gian còn lại, hệ thống sẽ trở nên sẵn sàng trong vòng 1 giờ kể từ khi tình huống được báo cáo.", "labels": ["Availability (A)", "Fault Tolerance (FT)", "Performance (PE)"], "label_ids": [1, 2, 7]}
+{"text": "98% máy trạm người dùng phải đáp ứng yêu cầu phần cứng tối thiểu trước khi triển khai. Dung lượng ổ đĩa cứng tối thiểu: 400 MB.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "98% máy trạm người dùng phải đáp ứng yêu cầu phần mềm tối thiểu trước khi triển khai: Microsoft Internet Explorer 5.0; Microsoft .NET Framework 1.1; Microsoft Internet Explorer Web Controls.", "labels": ["Operability (O)"], "label_ids": [6]}
+{"text": "Hệ thống RFS nên có khả năng dễ dàng giao diện với môi trường BDW để tải dữ liệu. Bảy tệp dữ liệu sẽ được nhận từ BDW và tải vào hệ thống RFS trong vòng 3 giờ, một ngày trước khi bắt đầu quy trình lập ngân sách hàng năm. Dữ liệu sẽ tính đến cuối tháng Mười. Các tệp thử nghiệm (7) sẽ được tải tới 5 lần trong năm từ BDW.", "labels": ["Operability (O)", "Performance (PE)"], "label_ids": [6, 7]}
+{"text": "Các thay đổi đối với công thức doanh thu và chi phí phải được áp dụng vào hệ thống RFS hàng năm trước khi bắt đầu quy trình lập ngân sách. Các công thức doanh thu và chi phí sẽ được cập nhật trong vòng một tuần kể từ khi nhận, sau đó sẽ dành 2 tuần để kiểm thử các phép tính ngân sách do nhóm phát triển dự án và Phòng Tài chính PCG tiến hành chung.", "labels": ["Legal (L)", "Maintainability (MN)"], "label_ids": [3, 5]}
+{"text": "Các chi nhánh/khu phức hợp/quận/vùng mới và các tài khoản doanh thu/chi phí được thêm vào BDW phải được phản ánh trong hệ thống RFS. 100% các thực thể (như trên) có sẵn tính đến cuối tháng Mười sẽ được tải vào hệ thống RFS trước khi bắt đầu quy trình lập ngân sách.", "labels": ["Availability (A)", "Maintainability (MN)"], "label_ids": [1, 5]}
+{"text": "Chỉ người dùng được ủy quyền mới được truy cập hệ thống RFS. Chỉ những người dùng tồn tại trong hệ thống UAS và có vai trò được gán hệ thống RFS mới được truy cập và sử dụng hệ thống RFS.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Truy cập của người dùng nên bị giới hạn theo quyền được cấp cho vai trò của họ. Mỗi cấp trong cơ cấu phân cấp PCG sẽ được gán một vai trò và người dùng sẽ được phân vào các vai trò này. Việc truy cập các chức năng trong hệ thống RFS phụ thuộc vào đặc quyền/quyền được gán cho vai trò đó.", "labels": ["Security (SE)"], "label_ids": [10]}
+{"text": "Sản phẩm phải tuân thủ tiêu chuẩn và yêu cầu trang intranet của ENET Securities. 95% giao diện và cảm nhận sản phẩm sẽ được Nhóm Kiến trúc phê duyệt trước khi triển khai. 5% còn lại sẽ được sửa và phê duyệt trong vòng một tháng kể từ khi phát hành sản phẩm.", "labels": ["Legal (L)", "Look & Feel (LF)"], "label_ids": [3, 4]}
+{"text": "Các trang intranet nên hiển thị phù hợp ở tất cả các độ phân giải từ 800x600 trở lên. Hiển thị của tất cả các trang sẽ chính xác ở 95% các độ phân giải trước khi triển khai. 5% còn lại sẽ được sửa trong vòng một tuần kể từ khi nhận được thông báo về hiển thị sai.", "labels": ["Look & Feel (LF)"], "label_ids": [4]}
+{"text": "Người dùng nên có thể dễ dàng sử dụng hệ thống để hoàn thành ngân sách của họ trong thời gian quy định. Với một tuần đào tạo trước khi triển khai sản phẩm, 98% người dùng sẽ hoàn thành ngân sách trong thời gian quy định.", "labels": ["Usability (US)"], "label_ids": [11]}
+{"text": "Giao diện sản phẩm phải nhanh. Thời gian phản hồi của giao diện sản phẩm không được vượt quá 2 giây trong 90% thời gian. Trong 10% thời gian còn lại, thời gian phản hồi không được vượt quá 10 giây.", "labels": ["Availability (A)", "Performance (PE)"], "label_ids": [1, 7]}

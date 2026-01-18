@@ -1,0 +1,45 @@
+{
+  "label_names": [
+    "Functional (F)",
+    "Availability (A)",
+    "Fault Tolerance (FT)",
+    "Legal (L)",
+    "Look & Feel (LF)",
+    "Maintainability (MN)",
+    "Operability (O)",
+    "Performance (PE)",
+    "Portability (PO)",
+    "Scalability (SC)",
+    "Security (SE)",
+    "Usability (US)"
+  ],
+  "label2id": {
+    "Functional (F)": 0,
+    "Availability (A)": 1,
+    "Fault Tolerance (FT)": 2,
+    "Legal (L)": 3,
+    "Look & Feel (LF)": 4,
+    "Maintainability (MN)": 5,
+    "Operability (O)": 6,
+    "Performance (PE)": 7,
+    "Portability (PO)": 8,
+    "Scalability (SC)": 9,
+    "Security (SE)": 10,
+    "Usability (US)": 11
+  },
+  "id2label": {
+    "0": "Functional (F)",
+    "1": "Availability (A)",
+    "2": "Fault Tolerance (FT)",
+    "3": "Legal (L)",
+    "4": "Look & Feel (LF)",
+    "5": "Maintainability (MN)",
+    "6": "Operability (O)",
+    "7": "Performance (PE)",
+    "8": "Portability (PO)",
+    "9": "Scalability (SC)",
+    "10": "Security (SE)",
+    "11": "Usability (US)"
+  },
+  "note": "label is a list[str] (multi-label). During training it is converted to a multi-hot vector using label2id."
+}

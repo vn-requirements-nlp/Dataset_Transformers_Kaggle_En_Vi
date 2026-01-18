@@ -1,0 +1,39 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Distribution / build
+build/
+dist/
+*.egg-info/
+
+# Test / tooling cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Data (ignore if not public)
+# data/raw/
+# data/processed/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Models (usually not committed; use Git LFS if needed)
+models/
+*.pkl
+
+# Outputs / logs
+outputs/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
