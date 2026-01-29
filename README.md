@@ -16,13 +16,13 @@ Fine-tuning Transformer cho bài toán phân loại đa nhãn các yêu cầu ph
   - `PROMISE-relabeled-NICE_EN.jsonl`
   - `PROMISE-relabeled-NICE_VI.jsonl` (căn dòng theo EN)
   - `labelmap_multilabel.json`
-  - `splits/` (tạo sau khi chạy `make_splits_stratified.py`)
+  - `splits/` (tạo sau khi chạy `transformer_make_splits_kfold.py`)
 - `scripts/`
-  - `make_splits_stratified.py`
-  - `train_multilabel.py`
-  - `tune_thresholds_multilabel.py`
-  - `eval_multilabel_report.py`
-  - `predict_multilabel.py`
+  - `transformer_make_splits_kfold.py`
+  - `transformer_train.py`
+  - `transformer_tune_thresholds.py`
+  - `transformer_eval_report.py`
+  - `transformer_predict.py`
 
 ---
 
@@ -55,20 +55,15 @@ pip install -r requirements.txt
 
 ---
 
-## 1) Tạo split cố định (chạy một lần)
+## 1) Tạo k-fold split (chạy một lần)
 
 Khuyến nghị tạo split trên EN và dùng lại cho VI (dữ liệu đã căn dòng):
 ```bash
-python scripts/make_splits_stratified.py --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --out_split data/splits/split_seed42.json --seed 42 --val_ratio 0.1 --test_ratio 0.1
+python scripts/transformer_make_splits_kfold.py --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --out_dir data/splits --seed 42 --n_splits 10 --val_ratio 0.1 --prefix split_kfold
 ```
 
 Output:
-- `data/splits/split_seed42.json` chứa `train_idx`, `val_idx`, `test_idx`
-
-Tùy chọn xuất tập con ra JSONL:
-```bash
-python scripts/make_splits_stratified.py --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --out_split data/splits/split_seed42.json --seed 42 --val_ratio 0.1 --test_ratio 0.1 --export_dir data/splits/seed42
-```
+- `data/splits/split_kfold_seed42_foldX.json` chứa `train_idx`, `val_idx`, `test_idx` cho mỗi fold
 
 ---
 
@@ -83,32 +78,32 @@ Ghi chú:
 
 EN:
 ```bash
-python scripts/train_multilabel.py --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_seed42.json --model_name xlm-roberta-base --output_dir models/xlmr_en/seed42 --epochs 5 --batch_size 8 --max_length 256 --threshold 0.5
+python scripts/transformer_train.py --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_kfold_seed42_fold0.json --model_name xlm-roberta-base --output_dir models/xlmr_en/seed42_fold0 --epochs 5 --batch_size 8 --max_length 256 --threshold 0.5
 ```
 
 VI:
 ```bash
-python scripts/train_multilabel.py --data_path data/Dataset_Full_VI.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_seed42.json --model_name xlm-roberta-base --output_dir models/xlmr_vi/seed42 --epochs 5 --batch_size 8 --max_length 256 --threshold 0.5 --use_vitokenizer
+python scripts/transformer_train.py --data_path data/Dataset_Full_VI.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_kfold_seed42_fold0.json --model_name xlm-roberta-base --output_dir models/xlmr_vi/seed42_fold0 --epochs 5 --batch_size 8 --max_length 256 --threshold 0.5 --use_vitokenizer
 ```
 
 ### Lựa chọn B: baseline EN (roberta-base)
 ```bash
-python scripts/train_multilabel.py --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_seed42.json --model_name roberta-base --output_dir models/roberta_en/seed42 --epochs 5 --batch_size 8 --max_length 256 --threshold 0.5
+python scripts/transformer_train.py --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_kfold_seed42_fold0.json --model_name roberta-base --output_dir models/roberta_en/seed42_fold0 --epochs 5 --batch_size 8 --max_length 256 --threshold 0.5
 ```
 
 ### Lựa chọn C: baseline VI (vinai/phobert-base)
 ```bash
-python scripts/train_multilabel.py --data_path data/Dataset_Full_VI.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_seed42.json --model_name vinai/phobert-base --output_dir models/phobert_vi/seed42 --epochs 5 --batch_size 8 --max_length 256 --threshold 0.5 --use_vitokenizer
+python scripts/transformer_train.py --data_path data/Dataset_Full_VI.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_kfold_seed42_fold0.json --model_name vinai/phobert-base --output_dir models/phobert_vi/seed42_fold0 --epochs 5 --batch_size 8 --max_length 256 --threshold 0.5 --use_vitokenizer
 ```
 
-`train_multilabel.py` sẽ ghi `train_config.json` và `labelmap.json` trong mỗi `--output_dir`. Các script tune/eval/predict sẽ tự đọc `max_length` và `use_vitokenizer` từ đây nếu bạn không truyền vào.
+`transformer_train.py` sẽ ghi `train_config.json` và `labelmap.json` trong mỗi `--output_dir`. Các script tune/eval/predict sẽ tự đọc `max_length` và `use_vitokenizer` từ đây nếu bạn không truyền vào.
 
 ---
 
 ## 3) Tune threshold trên VAL
 
 ```bash
-python scripts/tune_thresholds_multilabel.py --model_dir models/xlmr_en/seed42 --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_seed42.json --split_name val
+python scripts/transformer_tune_thresholds.py --model_dir models/xlmr_en/seed42_fold0 --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_kfold_seed42_fold0.json --split_name val
 ```
 
 Output:
@@ -119,7 +114,7 @@ Output:
 ## 4) Đánh giá trên TEST
 
 ```bash
-python scripts/eval_multilabel_report.py --model_dir models/xlmr_en/seed42 --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_seed42.json --split_name test --thresholds_json models/xlmr_en/seed42/thresholds.json --out_report models/xlmr_en/seed42/report_test.txt --out_metrics models/xlmr_en/seed42/metrics_test.json
+python scripts/transformer_eval_report.py --model_dir models/xlmr_en/seed42_fold0 --data_path data/Dataset_Full_EN.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_kfold_seed42_fold0.json --split_name test --thresholds_json models/xlmr_en/seed42_fold0/thresholds.json --out_report models/xlmr_en/seed42_fold0/report_test.txt --out_metrics models/xlmr_en/seed42_fold0/metrics_test.json
 ```
 
 Mẹo: dùng `--eval_all` để đánh giá toàn bộ file (bỏ qua split).
@@ -130,12 +125,12 @@ Mẹo: dùng `--eval_all` để đánh giá toàn bộ file (bỏ qua split).
 
 Một câu:
 ```bash
-python scripts/predict_multilabel.py --model_dir models/xlmr_vi/seed42 --text "The system shall refresh the display every 60 seconds." --thresholds_json models/xlmr_vi/seed42/thresholds.json --output_csv predictions.csv --include_active_labels
+python scripts/transformer_predict.py --model_dir models/xlmr_vi/seed42_fold0 --text "The system shall refresh the display every 60 seconds." --thresholds_json models/xlmr_vi/seed42_fold0/thresholds.json --output_csv predictions.csv --include_active_labels
 ```
 
 Nhiều câu từ file `.txt` (mỗi dòng 1 requirement):
 ```bash
-python scripts/predict_multilabel.py --model_dir models/xlmr_vi/seed42 --input_txt path/to/requirements.txt --thresholds_json models/xlmr_vi/seed42/thresholds.json --output_csv predictions.csv --include_active_labels
+python scripts/transformer_predict.py --model_dir models/xlmr_vi/seed42_fold0 --input_txt path/to/requirements.txt --thresholds_json models/xlmr_vi/seed42_fold0/thresholds.json --output_csv predictions.csv --include_active_labels
 ```
 
 Tùy chọn hữu ích:
@@ -145,3 +140,26 @@ Tùy chọn hữu ích:
 CSV đầu ra là UTF-8 có BOM để mở tốt trong Excel.
 
 ---
+
+## Seed words (optional)
+Cơ chế seed words giúp thêm đặc trưng nhị phân (presence per label) vào classifier.
+
+Chuẩn bị JSON dạng:
+```json
+{
+  "Functional (F)": ["must", "shall", "provide"],
+  "Performance (PE)": ["latency", "throughput"]
+}
+```
+
+Train với seed words:
+```bash
+python scripts/transformer_train.py --data_path data/Dataset_Full_VI.jsonl --labelmap_path data/labelmap_multilabel.json --split_path data/splits/split_kfold_seed42_fold0.json --model_name xlm-roberta-base --output_dir models/xlmr_vi/seed42_fold0 --epochs 5 --batch_size 8 --max_length 256 --threshold 0.5 --use_vitokenizer --seed_words_json data/seed_words.json
+```
+
+Khi train xong, `seed_words.json` sẽ được lưu trong `model_dir`. Các script `predict/tune/eval` sẽ tự đọc và dùng lại.
+
+---
+
+## N-gram
+Transformer đã dùng subword tokenization và học ngữ cảnh trực tiếp nên không cần cơ chế n-gram như TF-IDF. Nếu muốn so sánh hoặc ablation, hãy dùng n-gram ở baseline ML.

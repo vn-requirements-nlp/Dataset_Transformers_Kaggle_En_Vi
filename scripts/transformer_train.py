@@ -163,12 +163,21 @@ from sklearn.metrics import (
     recall_score,
 )
 from transformers import (
+    AutoConfig,
     AutoTokenizer,
     AutoModelForSequenceClassification,
     DataCollatorWithPadding,
     TrainingArguments,
     Trainer,
 )
+
+from transformer_feature_utils import (
+    build_seed_features,
+    load_seed_words,
+    normalize_seed_words,
+    seed_words_enabled,
+)
+from transformer_seeded_model import SeededSequenceClassifier
 
 
 # -----------------------------
@@ -299,7 +308,7 @@ def train_val_test_split(examples, test_ratio=0.1, val_ratio=0.1, seed=42):
     return subset(train_idx), subset(val_idx), subset(test_idx)
 
 
-def to_hf_dataset(examples, label2id, num_labels: int):
+def to_hf_dataset(examples, label2id, num_labels: int, seed_features: np.ndarray | None = None):
     """
     Convert examples to HF Dataset with multi-hot vectors in key "labels" (float32).
     Priority:
@@ -327,7 +336,12 @@ def to_hf_dataset(examples, label2id, num_labels: int):
 
         ys.append(y.tolist())
 
-    return Dataset.from_dict({"text": texts, "labels": ys})
+    data = {"text": texts, "labels": ys}
+    if seed_features is not None:
+        if len(seed_features) != len(texts):
+            raise ValueError("seed_features length must match examples")
+        data["seed_feats"] = seed_features.tolist()
+    return Dataset.from_dict(data)
 
 
 def compute_metrics_builder(threshold: float):
@@ -377,6 +391,17 @@ class WeightedBCETrainer(Trainer):
         loss = loss_fct(logits, labels.float())
         return (loss, outputs) if return_outputs else loss
 
+
+class SeedDataCollator(DataCollatorWithPadding):
+    def __call__(self, features):
+        seed_feats = None
+        if features and "seed_feats" in features[0]:
+            seed_feats = [f.pop("seed_feats") for f in features]
+        batch = super().__call__(features)
+        if seed_feats is not None:
+            batch["seed_feats"] = torch.tensor(seed_feats, dtype=torch.float32)
+        return batch
+
 # -----------------------------
 # Main
 # -----------------------------
@@ -416,10 +441,16 @@ def main():
         "--split_path",
         type=str,
         default=None,
-        help="Path to fixed split JSON (train/val/test indices) created by scripts/make_splits_stratified.py",
+        help="Path to split JSON (train/val/test indices) created by scripts/transformer_make_splits_kfold.py",
     )
     parser.add_argument(
         "--threshold", type=float, default=0.5, help="Sigmoid threshold"
+    )
+    parser.add_argument(
+        "--seed_words_json",
+        type=str,
+        default=None,
+        help="Optional JSON file: {label: [seed_word, ...]}",
     )
     parser.add_argument(
         "--use_pos_weight",
@@ -438,30 +469,6 @@ def main():
 
     out_dir = Path(args.output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-
-    # Persist preprocessing/tokenization settings so tune/eval scripts can reuse them.
-    (out_dir / "train_config.json").write_text(
-        json.dumps(
-            {
-                "preprocess": {"use_vitokenizer": bool(args.use_vitokenizer)},
-                "tokenization": {"max_length": int(args.max_length)},
-                "training": {
-                    "seed": int(args.seed),
-                    "use_pos_weight": bool(args.use_pos_weight),
-                    "pos_weight_max": float(args.pos_weight_max),
-                },
-                "model": {"name": str(args.model_name)},
-                "data": {
-                    "data_path": str(args.data_path),
-                    "labelmap_path": str(args.labelmap_path),
-                    "split_path": str(args.split_path) if args.split_path else None,
-                },
-            },
-            ensure_ascii=False,
-            indent=2,
-        ),
-        encoding="utf-8",
-    )
 
     data_path = Path(args.data_path)
     if not data_path.exists():
@@ -494,6 +501,56 @@ def main():
                     f"Pair: ({lab!r}, {lid}) but labelmap says {label2id.get(str(lab))}"
                 )
 
+    seed_words_map = {}
+    if args.seed_words_json:
+        seed_words_path = Path(args.seed_words_json)
+        if not seed_words_path.exists():
+            raise FileNotFoundError(f"seed_words_json not found: {seed_words_path}")
+        seed_words_map, unknown = load_seed_words(seed_words_path, label_names)
+        if unknown:
+            print("[WARN] seed_words_json has unknown label keys:", ", ".join(unknown))
+        if args.use_vitokenizer:
+            seed_words_map = normalize_seed_words(
+                seed_words_map, tokenizer=lambda t: maybe_tokenize_vi(t, True)
+            )
+        else:
+            seed_words_map = normalize_seed_words(seed_words_map, tokenizer=None)
+
+    if seed_words_enabled(seed_words_map):
+        (out_dir / "seed_words.json").write_text(
+            json.dumps(seed_words_map, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+
+    # Persist preprocessing/tokenization settings so tune/eval scripts can reuse them.
+    (out_dir / "train_config.json").write_text(
+        json.dumps(
+            {
+                "preprocess": {"use_vitokenizer": bool(args.use_vitokenizer)},
+                "tokenization": {"max_length": int(args.max_length)},
+                "training": {
+                    "seed": int(args.seed),
+                    "use_pos_weight": bool(args.use_pos_weight),
+                    "pos_weight_max": float(args.pos_weight_max),
+                },
+                "model": {"name": str(args.model_name)},
+                "data": {
+                    "data_path": str(args.data_path),
+                    "labelmap_path": str(args.labelmap_path),
+                    "split_path": str(args.split_path) if args.split_path else None,
+                },
+                "seed_words": {
+                    "enabled": seed_words_enabled(seed_words_map),
+                    "source_path": args.seed_words_json,
+                    "label_to_words": seed_words_map,
+                },
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
     print("🔀 Split train/val/test ...")
     if args.split_path:
         split_obj = json.loads(Path(args.split_path).read_text(encoding="utf-8"))
@@ -521,9 +578,18 @@ def main():
         for ex in test_ex:
             ex["text"] = maybe_tokenize_vi(ex["text"], True)
 
-    ds_train = to_hf_dataset(train_ex, label2id, num_labels)
-    ds_val = to_hf_dataset(val_ex, label2id, num_labels)
-    ds_test = to_hf_dataset(test_ex, label2id, num_labels)
+    seed_feats_train = seed_feats_val = seed_feats_test = None
+    if seed_words_enabled(seed_words_map):
+        train_texts = [ex["text"] for ex in train_ex]
+        val_texts = [ex["text"] for ex in val_ex]
+        test_texts = [ex["text"] for ex in test_ex]
+        seed_feats_train = build_seed_features(train_texts, seed_words_map, label_names)
+        seed_feats_val = build_seed_features(val_texts, seed_words_map, label_names)
+        seed_feats_test = build_seed_features(test_texts, seed_words_map, label_names)
+
+    ds_train = to_hf_dataset(train_ex, label2id, num_labels, seed_features=seed_feats_train)
+    ds_val = to_hf_dataset(val_ex, label2id, num_labels, seed_features=seed_feats_val)
+    ds_test = to_hf_dataset(test_ex, label2id, num_labels, seed_features=seed_feats_test)
     
     dataset = DatasetDict({"train": ds_train, "validation": ds_val, "test": ds_test})
 
@@ -545,16 +611,27 @@ def main():
         return tokenizer(batch["text"], truncation=True, max_length=args.max_length)
 
     dataset = dataset.map(tok, batched=True)
-    data_collator = DataCollatorWithPadding(tokenizer)
+    data_collator = SeedDataCollator(tokenizer)
 
     print(f"🤖 Load model: {args.model_name}")
-    model = AutoModelForSequenceClassification.from_pretrained(
-        args.model_name,
-        num_labels=num_labels,
-        problem_type="multi_label_classification",
-        id2label=id2label,
-        label2id=label2id,
-    )
+    if seed_words_enabled(seed_words_map):
+        config = AutoConfig.from_pretrained(
+            args.model_name,
+            num_labels=num_labels,
+            problem_type="multi_label_classification",
+            id2label=id2label,
+            label2id=label2id,
+        )
+        config.seed_words_dim = num_labels
+        model = SeededSequenceClassifier.from_pretrained(args.model_name, config=config)
+    else:
+        model = AutoModelForSequenceClassification.from_pretrained(
+            args.model_name,
+            num_labels=num_labels,
+            problem_type="multi_label_classification",
+            id2label=id2label,
+            label2id=label2id,
+        )
 
     training_args = TrainingArguments(
         output_dir=args.output_dir,

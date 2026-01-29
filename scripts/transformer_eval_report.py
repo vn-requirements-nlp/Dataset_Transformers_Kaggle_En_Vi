@@ -133,7 +133,14 @@ from pathlib import Path
 import numpy as np
 import torch
 from sklearn.metrics import classification_report, f1_score, precision_score, recall_score
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoConfig, AutoTokenizer, AutoModelForSequenceClassification
+
+from transformer_feature_utils import (
+    build_seed_features,
+    load_seed_words_from_model_dir,
+    seed_words_enabled,
+)
+from transformer_seeded_model import SeededSequenceClassifier
 
 
 
@@ -278,8 +285,17 @@ def main():
     texts = [maybe_tokenize_vi(r["text"], True) for r in subset] if args.use_vitokenizer else [r["text"] for r in subset]
     y_true = np.stack([to_multihot(r, label2id, num_labels) for r in subset], axis=0)
 
+    seed_words_map = load_seed_words_from_model_dir(Path(args.model_dir))
+    model_cfg = AutoConfig.from_pretrained(args.model_dir)
+    use_seed_words = int(getattr(model_cfg, "seed_words_dim", 0) or 0) > 0
+    if not use_seed_words and seed_words_enabled(seed_words_map):
+        print("[WARN] seed_words.json found but model was trained without seed features. Ignoring.")
+
     tokenizer = AutoTokenizer.from_pretrained(args.model_dir, use_fast=False)
-    model = AutoModelForSequenceClassification.from_pretrained(args.model_dir)
+    if use_seed_words:
+        model = SeededSequenceClassifier.from_pretrained(args.model_dir, config=model_cfg)
+    else:
+        model = AutoModelForSequenceClassification.from_pretrained(args.model_dir, config=model_cfg)
     model.eval()
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model.to(device)
@@ -287,8 +303,13 @@ def main():
     probs_all = []
     for i in range(0, len(texts), args.batch_size):
         batch = texts[i:i+args.batch_size]
+        seed_feats = None
+        if use_seed_words:
+            seed_feats = build_seed_features(batch, seed_words_map, label_names)
         enc = tokenizer(batch, return_tensors="pt", truncation=True, padding=True, max_length=args.max_length)
         enc = {k: v.to(device) for k, v in enc.items()}
+        if seed_feats is not None:
+            enc["seed_feats"] = torch.tensor(seed_feats, dtype=torch.float32, device=device)
         with torch.no_grad():
             logits = model(**enc).logits.detach().cpu().numpy()
         probs_all.append(sigmoid(logits))
@@ -316,9 +337,9 @@ def main():
     mode = "ALL" if args.eval_all else args.split_name.upper()
     title = args.run_name or f"{mode} | data={data_tag}"
 
-    print("\n" + "="*90)
+    print("\n" + "="*100)
     print(f"📊 Classification report (per label) | {title}")
-    print("="*90)
+    print("="*100)
     print(report)
     print("\n📌 Summary metrics:")
     for k in ["f1_micro","f1_macro","precision_micro","recall_micro","exact_match"]:
@@ -335,4 +356,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

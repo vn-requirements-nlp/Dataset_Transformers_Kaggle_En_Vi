@@ -139,7 +139,14 @@ from pathlib import Path
 import numpy as np
 import torch
 from sklearn.metrics import f1_score, precision_score, recall_score
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
+from transformers import AutoConfig, AutoModelForSequenceClassification, AutoTokenizer
+
+from transformer_feature_utils import (
+    build_seed_features,
+    load_seed_words_from_model_dir,
+    seed_words_enabled,
+)
+from transformer_seeded_model import SeededSequenceClassifier
 
 
 
@@ -201,9 +208,21 @@ def to_multihot(row, label2id, num_labels: int):
 
 
 @torch.no_grad()
-def predict_probs(texts, model_dir: str, max_length: int = 256, batch_size: int = 32):
+def predict_probs(
+    texts,
+    model_dir: str,
+    max_length: int = 256,
+    batch_size: int = 32,
+    seed_words_map: dict | None = None,
+    label_names: list | None = None,
+    use_seed_words: bool = False,
+):
     tokenizer = AutoTokenizer.from_pretrained(model_dir, use_fast=False)
-    model = AutoModelForSequenceClassification.from_pretrained(model_dir)
+    config = AutoConfig.from_pretrained(model_dir)
+    if int(getattr(config, "seed_words_dim", 0) or 0) > 0:
+        model = SeededSequenceClassifier.from_pretrained(model_dir, config=config)
+    else:
+        model = AutoModelForSequenceClassification.from_pretrained(model_dir, config=config)
     model.eval()
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model.to(device)
@@ -211,6 +230,11 @@ def predict_probs(texts, model_dir: str, max_length: int = 256, batch_size: int 
     probs_all = []
     for i in range(0, len(texts), batch_size):
         batch = texts[i : i + batch_size]
+        seed_feats = None
+        if use_seed_words:
+            if not label_names:
+                raise ValueError("label_names is required when use_seed_words=True")
+            seed_feats = build_seed_features(batch, seed_words_map or {}, label_names)
         enc = tokenizer(
             batch,
             return_tensors="pt",
@@ -219,6 +243,8 @@ def predict_probs(texts, model_dir: str, max_length: int = 256, batch_size: int 
             max_length=max_length,
         )
         enc = {k: v.to(device) for k, v in enc.items()}
+        if seed_feats is not None:
+            enc["seed_feats"] = torch.tensor(seed_feats, dtype=torch.float32, device=device)
         logits = model(**enc).logits.detach().cpu().numpy()
         probs_all.append(sigmoid(logits))
 
@@ -244,7 +270,7 @@ def main():
     ap.add_argument("--labelmap_path", required=True)
 
     # Paper-grade: use fixed split
-    ap.add_argument("--split_path", required=True, help="split_seedXX.json from scripts/make_splits_stratified.py")
+    ap.add_argument("--split_path", required=True, help="split_kfold_seedXX_foldY.json from scripts/transformer_make_splits_kfold.py")
     ap.add_argument("--split_name", default="val", choices=["train", "val", "test"])
 
 
@@ -279,6 +305,12 @@ def main():
     if args.max_length is None:
         args.max_length = int(cfg.get("tokenization", {}).get("max_length", 256))
 
+    seed_words_map = load_seed_words_from_model_dir(Path(args.model_dir))
+    model_cfg = AutoConfig.from_pretrained(args.model_dir)
+    use_seed_words = int(getattr(model_cfg, "seed_words_dim", 0) or 0) > 0
+    if not use_seed_words and seed_words_enabled(seed_words_map):
+        print("[WARN] seed_words.json found but model was trained without seed features. Ignoring.")
+
     rows = read_jsonl(Path(args.data_path))
     label_names, label2id, num_labels = load_labelmap(Path(args.labelmap_path))
 
@@ -290,7 +322,15 @@ def main():
     texts = [maybe_tokenize_vi(r["text"], True) for r in subset] if args.use_vitokenizer else [r["text"] for r in subset]
     y_true = np.stack([to_multihot(r, label2id, num_labels) for r in subset], axis=0)
 
-    probs = predict_probs(texts, args.model_dir, max_length=args.max_length, batch_size=args.batch_size)
+    probs = predict_probs(
+        texts,
+        args.model_dir,
+        max_length=args.max_length,
+        batch_size=args.batch_size,
+        seed_words_map=seed_words_map,
+        label_names=label_names,
+        use_seed_words=use_seed_words,
+    )
 
     grid = np.arange(args.thr_min, args.thr_max + 1e-9, args.thr_step)
 

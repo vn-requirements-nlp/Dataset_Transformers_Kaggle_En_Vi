@@ -133,7 +133,14 @@ from typing import Dict, List, Optional, Tuple
 
 import numpy as np
 import torch
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
+from transformers import AutoConfig, AutoModelForSequenceClassification, AutoTokenizer
+
+from transformer_feature_utils import (
+    build_seed_features,
+    load_seed_words_from_model_dir,
+    seed_words_enabled,
+)
+from transformer_seeded_model import SeededSequenceClassifier
 
 
 def load_train_config(model_dir: Path) -> dict:
@@ -187,9 +194,13 @@ def load_thresholds(thresholds_json: Optional[str]) -> Optional[Dict[str, float]
     return thr_map
 
 
-def load_model(model_dir: str) -> Tuple[AutoTokenizer, AutoModelForSequenceClassification, str, Dict[int, str]]:
+def load_model(model_dir: str) -> Tuple[AutoTokenizer, torch.nn.Module, str, Dict[int, str]]:
     tokenizer = AutoTokenizer.from_pretrained(model_dir, use_fast=False)
-    model = AutoModelForSequenceClassification.from_pretrained(model_dir)
+    config = AutoConfig.from_pretrained(model_dir)
+    if int(getattr(config, "seed_words_dim", 0) or 0) > 0:
+        model = SeededSequenceClassifier.from_pretrained(model_dir, config=config)
+    else:
+        model = AutoModelForSequenceClassification.from_pretrained(model_dir, config=config)
     model.eval()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -215,9 +226,10 @@ def load_model(model_dir: str) -> Tuple[AutoTokenizer, AutoModelForSequenceClass
 def predict_proba_batch(
     texts: List[str],
     tokenizer: AutoTokenizer,
-    model: AutoModelForSequenceClassification,
+    model: torch.nn.Module,
     device: str,
     max_length: int,
+    seed_feats: Optional[np.ndarray] = None,
 ) -> np.ndarray:
     inputs = tokenizer(
         texts,
@@ -227,6 +239,8 @@ def predict_proba_batch(
         max_length=max_length,
     )
     inputs = {k: v.to(device) for k, v in inputs.items()}
+    if seed_feats is not None:
+        inputs["seed_feats"] = torch.tensor(seed_feats, dtype=torch.float32, device=device)
 
     with torch.no_grad():
         logits = model(**inputs).logits.detach().cpu().numpy()
@@ -316,6 +330,12 @@ def main():
     tokenizer, model, device, id2label = load_model(args.model_dir)
     labels_in_order = [id2label[i] for i in sorted(id2label.keys())]
 
+    seed_words_map = load_seed_words_from_model_dir(Path(args.model_dir))
+    seed_dim = int(getattr(model.config, "seed_words_dim", 0) or 0)
+    use_seed_words = seed_dim > 0
+    if not use_seed_words and seed_words_enabled(seed_words_map):
+        print("[WARN] seed_words.json found but model was trained without seed features. Ignoring.")
+
     thr_map = load_thresholds(args.thresholds_json)
     thr_vec = np.array([thr_map.get(lab, args.threshold) if thr_map else args.threshold for lab in labels_in_order])
 
@@ -335,7 +355,17 @@ def main():
     # batching
     for start in range(0, len(texts), args.batch_size):
         batch = texts[start : start + args.batch_size]
-        probs = predict_proba_batch(batch, tokenizer, model, device, args.max_length)  # [B, L]
+        seed_feats = None
+        if use_seed_words:
+            seed_feats = build_seed_features(batch, seed_words_map, labels_in_order)
+        probs = predict_proba_batch(
+            batch,
+            tokenizer,
+            model,
+            device,
+            args.max_length,
+            seed_feats=seed_feats,
+        )  # [B, L]
 
         for t, p in zip(batch, probs):
             pred01 = (p >= thr_vec).astype(int)
